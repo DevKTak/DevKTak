@@ -1,0 +1,77 @@
+.DevKTakLogo {
+  font-style: italic;
+  font-family: 'tahoma';
+  text-shadow: 0 2px 0 #ff2424,
+  0 2px 0 #c9c9c9,
+  0 3px 0 #bbb,
+  0 4px 0 #b9b9b9,
+  0 5px 0 #aaa,
+  0 6px 1px rgba(0,0,0,.1),
+  0 0 5px rgba(0,0,0,.1),
+  0 1px 3px rgba(0,0,0,.3),
+  0 3px 5px rgba(0,0,0,.2),
+  0 5px 10px rgba(0,0,0,.25),
+  0 10px 10px rgba(0,0,0,.2),
+  0 20px 20px rgba(0,0,0,.15);
+}
+
+/*ul > li {*/
+/*  padding-left: 30px;*/
+/*}*/
+
+/* ================== 부트스트랩 커스텀 ================== */
+
+/* 네비게이션 영역 Start */
+/*.navbar-dark .navbar-brand { !* 네비게이션 제목 색상 *!*/
+/*  color: #ff2424;*/
+/*}*/
+/*.navbar-dark .navbar-nav .nav-link { !* 네비게이션 글자 기본 색상 *!*/
+/*  color: white;*/
+/*}*/
+/*!*dropdown-menu { !* 드랍다운 배경색 *!*!*/
+/*!*  background-color: #222;*!*/
+/*!*}*!*/
+/*.dropdown-menu > li > a { !* 드랍다운 내부 리스트 글자 색상 *!*/
+/*  color: white;*/
+/*  background-color: #222;*/
+/*}*/
+/*.dropdown-menu > .active > a,*/
+/*.dropdown-menu > .active > a:hover,*/
+/*.dropdown-menu > .active > a:focus { !* 드랍다운 내부 리스트에서 현재 선택된 네비게이션 색상 이벤트 *!*/
+/*  color: #ff2424;*/
+/*  background-color: black;*/
+/*}*/
+/*.navbar-dark .navbar-nav .nav-link > a:hover,*/
+/*.navbar-dark .navbar-nav .nav-link > a:focus { !* 네비게이션 글자에 마우스 올렸을 때 *!*/
+/*  color: #ff2424;*/
+/*}*/
+/*.navbar-dark .navbar-nav .nav-link > a { !* 네비게이션 글자 기본 색상 *!*/
+/*  color: white;*/
+/*}*/
+/*.navbar-dark .navbar-nav > .open > a,*/
+/*.navbar-dark .navbar-nav > .open > a:hover,*/
+/*.navbar-dark .navbar-nav > .open > a:focus { !* 드랍다운이 열렸을 때 글자 색상 *!*/
+/*  color: #ff2424;*/
+/*  background-color: black;*/
+/*}*/
+
+/* 네비게이션 영역 End */
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
