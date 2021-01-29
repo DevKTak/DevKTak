@@ -41,7 +41,8 @@ public class MemberService {
     /** 회원 저장 **/
     public Member memberSave(SignUpForm signUpForm) {
         signUpForm.setPassword(passwordEncoder.encode(signUpForm.getPassword())); // password BCrypt 인코딩
-        Member member = modelMapper.map(signUpForm, Member.class);
+        log.debug(signUpForm.toString());
+        Member member = modelMapper.map(signUpForm, Member.class); // Member 타입의 인스턴스가 만들어지고 signUpForm에 들어있는 데이터로 채워짐
         member.generateEmailCheckToken(); // 토큰 생성
 
         return memberRepository.save(member);

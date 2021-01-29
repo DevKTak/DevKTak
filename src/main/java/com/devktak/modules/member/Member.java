@@ -7,8 +7,9 @@ import java.time.LocalDateTime;
 import java.util.UUID;
 
 @Entity
-@Getter @EqualsAndHashCode(of = "id")
+@Getter @Setter @EqualsAndHashCode(of = "id")
 @Builder @AllArgsConstructor @NoArgsConstructor(access = AccessLevel.PROTECTED)
+@ToString
 public class Member {
 
     @Id @GeneratedValue
@@ -26,7 +27,7 @@ public class Member {
 
     private String passwordConfirm;
 
-    private Long phoneNumber;
+    private String phoneNumber;
 
     private boolean emailVerified; // email 인증이 된 계정인지
 

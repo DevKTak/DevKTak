@@ -15,8 +15,8 @@ public class AppConfig {
         return PasswordEncoderFactories.createDelegatingPasswordEncoder(); // BCrypt 해싱 알고리즘 사용
     }
 
-    @Bean
-    public ModelMapper modelMapper() { // ModelMapper 사용
+    @Bean // ModelMapper 사용을 위해 등록
+    public ModelMapper modelMapper() {
         ModelMapper modelMapper = new ModelMapper();
         modelMapper.getConfiguration()
                 .setMatchingStrategy(MatchingStrategies.STRICT); // 완전히 일치 할 경우에만 매칭 하는 설정

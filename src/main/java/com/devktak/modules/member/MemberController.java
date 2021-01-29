@@ -1,14 +1,17 @@
 package com.devktak.modules.member;
 
 import com.devktak.modules.member.form.SignUpForm;
+import com.devktak.modules.member.validator.SignUpFormValidator;
 import lombok.AccessLevel;
 import lombok.RequiredArgsConstructor;
 import lombok.extern.slf4j.Slf4j;
 import org.springframework.validation.Errors;
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
-import org.springframework.validation.ObjectError;
+import org.springframework.validation.FieldError;
+import org.springframework.web.bind.WebDataBinder;
 import org.springframework.web.bind.annotation.GetMapping;
+import org.springframework.web.bind.annotation.InitBinder;
 import org.springframework.web.bind.annotation.ModelAttribute;
 import org.springframework.web.bind.annotation.PostMapping;
 
@@ -19,7 +22,14 @@ import javax.validation.Valid;
 @RequiredArgsConstructor(access = AccessLevel.PROTECTED)
 public class MemberController {
 
+    private final SignUpFormValidator signUpFormValidator;
     private final MemberService memberService;
+
+    /** 백엔드 커스텀 유효성 검사 (SignupFormValidator.java) 사용 **/
+    @InitBinder("signUpForm") // signUp() 메소드 파라미터 같은 상황에서 SignUpForm을 받을 때 호출!, SignUpForm의 카멜케이스로 들어감
+    public void initBinder(WebDataBinder webDataBinder) {
+        webDataBinder.addValidators(signUpFormValidator);
+    }
 
     @GetMapping("/sign-up")
     public String signUpForm(Model model) {
@@ -31,10 +41,15 @@ public class MemberController {
     @PostMapping("/sign-up")
     public String signUp(@Valid @ModelAttribute SignUpForm signUpForm, Errors errors) {
         if (errors.hasErrors()) {
-            log.info("errors ::: " + errors);
-            for (ObjectError error: errors.getAllErrors()) {
-                log.info("error.getDefaultMessage() = " + error.getDefaultMessage());
+//            log.debug("errors ::: " + errors);
+//            for (ObjectError error: errors.getAllErrors()) {
+//                log.info("error.getDefaultMessage() = " + error.getDefaultMessage());
+//            }
+            for (FieldError error : errors.getFieldErrors()) {
+                String validKeyName = String.format("valid_%s", error.getField());
+                log.debug(validKeyName + " ::: " + error.getDefaultMessage());
             }
+
             return "member/sign-up";
         }
         Member member = memberService.signUp(signUpForm); // 회원 가입

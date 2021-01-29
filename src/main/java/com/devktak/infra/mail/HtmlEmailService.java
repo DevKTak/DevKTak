@@ -12,7 +12,7 @@ import javax.mail.MessagingException;
 import javax.mail.internet.MimeMessage;
 
 @Slf4j
-@Profile("dev")  // 프로파일이 dev일 때 사용이 됨
+//@Profile("dev")  // 프로파일이 dev일 때 사용이 됨
 @Component
 @RequiredArgsConstructor
 /**

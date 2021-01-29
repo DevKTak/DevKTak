@@ -7,4 +7,7 @@ import org.springframework.transaction.annotation.Transactional;
 @Transactional(readOnly = true)
 public interface MemberRepository extends JpaRepository<Member, Long> {
 
+    boolean existsByEmail(String email);
+
+    boolean existsByUserId(String userId);
 }
