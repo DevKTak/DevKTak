@@ -3,8 +3,106 @@
 <head>
     <meta charset="UTF-8">
     <title>회원가입</title>
+    <head th:replace="fragments.html :: head"></head>
+    <script>
+        $(function() {
+            // 비밀번호 검증
+            $('#passwordConfirm').keyup(function() {
+                if ($('#password').val() !== $('#passwordConfirm').val()) {
+                    $('#password').removeClass('is-valid');
+                    $('#passwordConfirm').removeClass('is-valid');
+                    $('#password').addClass('is-invalid');
+                    $('#passwordConfirm').addClass('is-invalid');
+                } else {
+                    $('#password').removeClass('is-invalid');
+                    $('#passwordConfirm').removeClass('is-invalid');
+                    $('#password').addClass('is-valid');
+                    $('#passwordConfirm').addClass('is-valid');
+                }
+            });
+        });
+    </script>
 </head>
 <body>
+<div th:replace="fragments.html :: side-nav"></div>
 
+<div class="container">
+    <div class="py-5 text-center">
+        <h2>Join DevKTak</h2>
+        <h3>Create your account</h3>
+    </div>
+    <div class="row justify-content-center">
+        <form class="needs-validation" th:object="${signUpForm}" method="post" action="#" th:action="@{/sign-up}" novalidate>
+
+            <div class="form-group">
+                <label for="userId">아이디</label>
+                <input type="text" id="userId" th:field="*{userId}" class="form-control" aria-describedby="validationUserIdFeedback" placeholder="ID를 입력하세요. (5자 ~ 20자)" minlength="5" maxlength="20" required>
+                <small id="validationUserIdFeedback" class="invalid-feedback"> <!-- 프론트 예외 처리 컬러변경 -->
+                    공백없이 영문, 숫자 5자 ~ 20자 이내로 입력하세요.
+                </small>
+                <small class="form-text text-danger" th:if="${#fields.hasErrors('userId')}" th:errors="*{userId}">UserId Error message replace</small>
+            </div>
+
+            <div class="form-group">
+                <label for="email">이메일</label>
+                <input type="email" id="email" th:field="*{email}" class="form-control" aria-describedby="validationEmailFeedback" placeholder="이메일을 입력하세요." required>
+                <small id="validationEmailFeedback" class="invalid-feedback"> <!-- 프론트 예외 처리 컬러변경 -->
+                    이메일을 입력하세요.
+                </small>
+                <small class="form-text text-danger" th:if="${#fields.hasErrors('email')}" th:errors="*{email}">Email Error</small>
+            </div>
+
+            <div class="form-group">
+                <label for="password">패스워드</label>
+                <input id="password" type="password" th:field="*{password}" class="form-control" aria-describedby="validationPasswordFeedback"
+                       minlength="4" maxlength="50" required>
+                <small id="validationPasswordFeedback" class="invalid-feedback">
+                    4자 ~ 16자로 입력하세요.
+                </small>
+                <small class="form-text text-danger" th:if="${#fields.hasErrors('password')}" th:errors="*{password}">Password Error</small>
+            </div>
+
+            <div class="form-group">
+                <label for="passwordConfirm">패스워드 확인</label>
+                <input id="passwordConfirm" type="password" th:field="*{passwordConfirm}" class="form-control" aria-describedby="validationPasswordFeedback"
+                       minlength="4" maxlength="50" required>
+                <small id="validationPasswordConfirmFeedback" class="invalid-feedback">
+                    4자 ~ 16자로 입력하세요.
+                </small>
+                <small class="form-text text-danger" th:if="${#fields.hasErrors('password')}" th:errors="*{password}">Password Error</small>
+            </div>
+
+            <div class="form-group">
+                <input type="hidden" th:field="*{phoneNumber}">
+                <label for="phoneNumberFirst">휴대전화</label>
+                <div id="phoneNumberGroup" class="row">
+                    <div class="col-md-4">
+                        <select class="form-control" id="phoneNumberFirst" required>
+                            <option value="010">010</option>
+                            <option value="011">011</option>
+                            <option value="017">017</option>
+                            <option value="018">018</option>
+                            <option value="02">02</option>
+                        </select>
+                    </div>
+                    <div class="col-md-4">
+                        <input type="text" class="form-control" minlength="3" maxlength="4" required>
+                    </div>
+                    <div class="col-md-4">
+                        <input type="text" class="form-control" minlength="4" maxlength="4" required>
+                    </div>
+                </div>
+            </div>
+
+            <div class="form-group">
+                <button type="submit" class="btn btn-primary btn-block" aria-describedby="submitHelp">가입하기</button>
+                <small id="submitHelp" class="form-text text-muted">
+                    <a href="#">약관</a>에 동의하시면 가입하기 버튼을 클릭하세요.
+                </small>
+            </div>
+        </form>
+    </div>
+</div>
+<script th:replace="fragments.html :: form-validation"></script>
 </body>
 </html>

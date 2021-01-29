@@ -1,4 +1,4 @@
-package com.devktak.config;
+package com.devktak.infra.config;
 
 import lombok.RequiredArgsConstructor;
 import org.springframework.boot.autoconfigure.security.servlet.PathRequest;
@@ -18,6 +18,12 @@ public class SecurityConfig extends WebSecurityConfigurerAdapter { // WebSecurit
         http.authorizeRequests()
                 .mvcMatchers("/", "login", "sign-up").permitAll() // 권한 확인없이 접근 해야 할 요청들
                 .anyRequest().authenticated(); // 나머지 요청은 로그인 (인증받은 사용자) 해야만 사용 가능
+
+        http.formLogin() // Spring Security의 기본 로그인 화면
+                .loginPage("/login").permitAll(); // 커스텀한 페이지를 로그인 페이지로 사용
+
+        http.logout()
+                .logoutSuccessUrl("/"); // 로그아웃 성공 시 url
     }
 
     /**
