@@ -3,6 +3,7 @@ package com.devktak.infra.config;
 import lombok.RequiredArgsConstructor;
 import org.springframework.boot.autoconfigure.security.servlet.PathRequest;
 import org.springframework.context.annotation.Configuration;
+import org.springframework.http.HttpMethod;
 import org.springframework.security.config.annotation.web.builders.HttpSecurity;
 import org.springframework.security.config.annotation.web.builders.WebSecurity;
 import org.springframework.security.config.annotation.web.configuration.EnableWebSecurity;
@@ -16,13 +17,14 @@ public class SecurityConfig extends WebSecurityConfigurerAdapter { // WebSecurit
     @Override
     protected void configure(HttpSecurity http) throws Exception {
         http.authorizeRequests()
-                .mvcMatchers("/", "login", "sign-up").permitAll() // 권한 확인없이 접근 해야 할 요청들
+                .mvcMatchers("/", "login", "sign-up", "check-email-token").permitAll() // 권한 확인없이 접근 해야 할 요청들
+                .mvcMatchers(HttpMethod.GET, "/profile/*").permitAll() // 프로필 요청은 GET만 허용
                 .anyRequest().authenticated(); // 나머지 요청은 로그인 (인증받은 사용자) 해야만 사용 가능
 
         http.formLogin() // Spring Security의 기본 로그인 화면
                 .loginPage("/login").permitAll(); // 커스텀한 페이지를 로그인 페이지로 사용
 
-        http.logout()
+        http.logout() // post 방식 (/loguot) 자동 매핑
                 .logoutSuccessUrl("/"); // 로그아웃 성공 시 url
     }
 

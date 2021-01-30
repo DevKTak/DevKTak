@@ -1,8 +1,6 @@
 <!DOCTYPE html>
 <html lang="en" xmlns:th="http://www.thymeleaf.org">
 <head>
-    <meta charset="UTF-8">
-    <title>회원가입</title>
     <head th:replace="fragments.html :: head"></head>
     <script>
         $(function() {
@@ -48,19 +46,28 @@
             <div class="form-group">
                 <label for="userId">아이디</label>
                 <input type="text" id="userId" th:field="*{userId}" class="form-control" aria-describedby="validationUserIdFeedback" placeholder="ID를 입력하세요. (5자 ~ 20자)" minlength="5" maxlength="20" required>
-                <small id="validationUserIdFeedback" class="invalid-feedback"> <!-- 프론트 예외 처리 컬러변경 -->
+                <small id="validationUserIdFeedback" class="invalid-feedback"> <!-- 프론트 예외 처리 (컬러변경) -->
                     공백없이 영문, 숫자 5자 ~ 20자 이내로 입력하세요.
                 </small>
-                <small class="form-text text-danger" th:if="${#fields.hasErrors('userId')}" th:errors="*{userId}">UserId Error message replace</small>
+                <small class="form-text text-danger" th:if="${#fields.hasErrors('userId')}" th:errors="*{userId}">UserId Error message replace</small> <!-- 백엔드 예외 처리 (빨간 글씨) -->
             </div>
 
             <div class="form-group">
                 <label for="email">이메일</label>
                 <input type="email" id="email" th:field="*{email}" class="form-control" aria-describedby="validationEmailFeedback" placeholder="이메일을 입력하세요." required>
-                <small id="validationEmailFeedback" class="invalid-feedback"> <!-- 프론트 예외 처리 컬러변경 -->
+                <small id="validationEmailFeedback" class="invalid-feedback">
                     이메일을 입력하세요.
                 </small>
                 <small class="form-text text-danger" th:if="${#fields.hasErrors('email')}" th:errors="*{email}">Email Error</small>
+            </div>
+
+            <div class="form-group">
+                <label for="name">이름</label>
+                <input type="text" id="name" th:field="*{name}" class="form-control" aria-describedby="validationNameFeedback" placeholder="이름을 입력하세요." required>
+                <small id="validationNameFeedback" class="invalid-feedback">
+                    이름을 입력하세요.
+                </small>
+                <small class="form-text text-danger" th:if="${#fields.hasErrors('name')}" th:errors="*{name}">Name Error</small>
             </div>
 
             <div class="form-group">

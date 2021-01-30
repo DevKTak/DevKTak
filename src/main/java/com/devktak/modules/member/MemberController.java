@@ -24,6 +24,7 @@ public class MemberController {
 
     private final SignUpFormValidator signUpFormValidator;
     private final MemberService memberService;
+    private final MemberRepository memberRepository;
 
     /** 백엔드 커스텀 유효성 검사 (SignupFormValidator.java) 사용 **/
     @InitBinder("signUpForm") // signUp() 메소드 파라미터 같은 상황에서 SignUpForm을 받을 때 호출!, SignUpForm의 카멜케이스로 들어감
@@ -56,6 +57,32 @@ public class MemberController {
         memberService.login(member);
 
         return "redirect:/";
+    }
 
+    @GetMapping("/check-email-token")
+    public String checkEmailToken(String token, String email, Model model) {
+        Member member = memberRepository.findByEmail(email);
+        String view = "member/checked-email";
+
+        if (member == null) {
+            model.addAttribute("error", "wrong.email");
+            return view;
+        }
+
+        // 리팩토링
+//        if (!member.getEmailCheckToken().equals(token)) {
+        if (!member.isValidToken(token)) {
+            model.addAttribute("error", "wrong.token");
+            return view;
+        }
+
+        // 리팩토링
+//        account.setEmailVerified(true);
+//        account.setJoinedAt(LocalDateTime.now());
+        memberService.completeSignUp(member);
+
+        model.addAttribute("numberOfUser", memberRepository.count());
+        model.addAttribute("name", member.getName());
+        return view;
     }
 }

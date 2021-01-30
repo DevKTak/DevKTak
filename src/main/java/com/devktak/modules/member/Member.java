@@ -42,9 +42,20 @@ public class Member {
     // 이미지 같은 경우는 유저를 로딩할때 종종 같이 쓰일거 같아서 FetchType.EAGER로 줬음
     private String profileImage;
 
-    /** 이메일체크 랜덤 토큰 생성, 토큰 생성 시간 저장 */
+    /** 이메일체크 랜덤 토큰 생성, 토큰 생성 시간 저장 **/
     public void generateEmailCheckToken() {
         this.emailCheckToken = UUID.randomUUID().toString();
         this.emailCheckTokenGeneratedAt = LocalDateTime.now();
+    }
+
+    /** 가입 인증 통과 시 **/
+    public void completeSignUp() {
+        this.emailVerified = true;
+        this.joinedAt = LocalDateTime.now();
+    }
+
+    /** 쿼리스트링으로 넘어온 토큰과 회원가입 시 저장했던 토큰값 비교 **/
+    public boolean isValidToken(String token) {
+        return this.emailCheckToken.equals(token);
     }
 }

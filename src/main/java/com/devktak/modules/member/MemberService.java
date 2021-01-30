@@ -80,4 +80,9 @@ public class MemberService {
                 List.of(new SimpleGrantedAuthority("ROLE_USER")));
         SecurityContextHolder.getContext().setAuthentication(token); // 만든 토큰값 넣기, view와 테스트에서 authenticated()로 이용할 수 있음
     }
+
+    /** 이메일 인증 통과 **/
+    public void completeSignUp(Member member) {
+        member.completeSignUp();
+    }
 }

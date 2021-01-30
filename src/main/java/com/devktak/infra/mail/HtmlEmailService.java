@@ -15,9 +15,7 @@ import javax.mail.internet.MimeMessage;
 //@Profile("dev")  // 프로파일이 dev일 때 사용이 됨
 @Component
 @RequiredArgsConstructor
-/**
- * Html로 이메일 보내는 구현체
- */
+/** Html로 이메일 보내는 구현체 **/
 public class HtmlEmailService implements EmailService {
 
     private final JavaMailSender javaMailSender;

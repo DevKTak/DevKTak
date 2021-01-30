@@ -24,6 +24,9 @@ public class SignUpForm {
     @NotBlank(message = "email은 필수입니다.")
     private String email;
 
+    @NotBlank
+    private String name;
+
     //    @NotEmpty // null과 ""을 허용하지 않는다
     @NotBlank // null과 ""와 " "(빈공백문자열)을 허용하지 않는다
     @Length(min = 4, max = 16)
