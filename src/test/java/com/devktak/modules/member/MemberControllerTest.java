@@ -19,11 +19,8 @@ import static org.springframework.test.web.servlet.result.MockMvcResultMatchers.
 @AutoConfigureMockMvc // MVC 테스트
 class MemberControllerTest {
 
-    @Autowired
-    private MockMvc mockMvc;
-
-//    @Autowired
-//    private MemberRepository memberRepository;
+    @Autowired private MockMvc mockMvc;
+    @Autowired private MemberRepository memberRepository;
 
     @DisplayName("회원 가입 화면 보이는지 테스트")
     @Test

@@ -9,6 +9,7 @@ import java.util.List;
 /**
  * SpringSecurity가 다루는 User정보와
  * 도메인이 다루는 유저 정보의 사이를 매꾸는 일종의 어댑터 역할이라고 생각
+ * Principal로 사용
  */
 @Getter
 public class MemberAdapter extends User {

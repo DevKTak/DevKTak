@@ -10,6 +10,9 @@ import org.modelmapper.ModelMapper;
 import org.springframework.security.authentication.UsernamePasswordAuthenticationToken;
 import org.springframework.security.core.authority.SimpleGrantedAuthority;
 import org.springframework.security.core.context.SecurityContextHolder;
+import org.springframework.security.core.userdetails.UserDetails;
+import org.springframework.security.core.userdetails.UserDetailsService;
+import org.springframework.security.core.userdetails.UsernameNotFoundException;
 import org.springframework.security.crypto.password.PasswordEncoder;
 import org.springframework.stereotype.Service;
 import org.thymeleaf.TemplateEngine;
@@ -21,7 +24,7 @@ import java.util.List;
 @Transactional
 @RequiredArgsConstructor
 @Slf4j
-public class MemberService {
+public class MemberService implements UserDetailsService {
 
     private final PasswordEncoder passwordEncoder;
     private final ModelMapper modelMapper;
@@ -84,5 +87,21 @@ public class MemberService {
     /** 이메일 인증 통과 **/
     public void completeSignUp(Member member) {
         member.completeSignUp();
+    }
+
+    /** Spring Security 로그인 기능을 위한 메서드 오버라이딩 **/
+    @Override
+    public UserDetails loadUserByUsername(String userIdOrEmail) throws UsernameNotFoundException {
+        Member member = memberRepository.findByUserId(userIdOrEmail);
+
+        if (member == null) {
+            member = memberRepository.findByEmail(userIdOrEmail);
+        }
+
+        if (member == null) {
+            throw new UsernameNotFoundException(userIdOrEmail);
+        }
+
+        return new MemberAdapter(member);
     }
 }
