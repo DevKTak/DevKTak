@@ -85,4 +85,26 @@ public class MemberController {
         model.addAttribute("name", member.getName());
         return view;
     }
+
+    /** email 인증 여부 체크하는 view로 핸들링 **/
+    @GetMapping("/check-email")
+    public String checkEmail(@CurrentMember Member member, Model model) {
+        model.addAttribute("email", member.getEmail());
+        return "member/check-email";
+    }
+
+    /** email 인증 재전송 **/
+    @GetMapping("/resend-confirm-email")
+    public String resendConfirmEmail(@CurrentMember Member member, Model model) {
+        if (!member.canSendConfirmEmail()) {
+            model.addAttribute("error", "인증 이메일은 1시간에 한번만 전송할 수 있습니다.");
+            model.addAttribute("email", member.getEmail());
+            return "member/check-email";
+        } else {
+            memberService.reGenerateEmailCheckToken(member); // 이메일 체크 토큰 재생성
+            memberService.sendSignUpConfirmEmail(member); // 이메일 재전송
+            return "redirect:/";
+        }
+
+    }
 }

@@ -25,8 +25,6 @@ public class Member {
 
     private String password;
 
-    private String passwordConfirm;
-
     private String phoneNumber;
 
     private boolean emailVerified; // email 인증이 된 계정인지
@@ -54,8 +52,16 @@ public class Member {
         this.joinedAt = LocalDateTime.now();
     }
 
-    /** 쿼리스트링으로 넘어온 토큰과 회원가입 시 저장했던 토큰값 비교 **/
+    /** 토큰값 검증 **/
     public boolean isValidToken(String token) {
+        // 쿼리스트링으로 넘어온 토큰과 회원가입 시 저장했던 토큰값 비교
         return this.emailCheckToken.equals(token);
+    }
+
+    /** 이메일 재전송 가능 여부 파악 **/
+    public boolean canSendConfirmEmail() {
+        // isBefore() : 두 개의 날짜와 시간 객체를 비교하여 현재 객체가 명시된 객체보다 앞선 시간인지를 비교함
+        // 이메일체크 토큰 생성시간이 현재 시간에서 1시간 뺀것보다 앞선 시간인지.
+        return this.emailCheckTokenGeneratedAt.isBefore(LocalDateTime.now().minusHours(1));
     }
 }

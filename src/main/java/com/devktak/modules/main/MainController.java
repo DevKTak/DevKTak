@@ -15,7 +15,6 @@ public class MainController {
 
     @GetMapping("/")
     public String main(@CurrentMember Member member, Model model) {
-        log.debug("MainController에서 member 값 찍어보기 ::: " + member);
         if (member != null) {
             model.addAttribute(member);
         }
