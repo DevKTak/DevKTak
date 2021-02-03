@@ -35,9 +35,8 @@ public class Member {
 
     private LocalDateTime joinedAt;
 
-    @Lob
-    @Basic(fetch = FetchType.EAGER) // String => varcahr(255) / @Lob == text
-    // 이미지 같은 경우는 유저를 로딩할때 종종 같이 쓰일거 같아서 FetchType.EAGER로 줬음
+    @Lob // String => varcahr(255) / @Lob == text
+    @Basic(fetch = FetchType.EAGER) // 이미지 같은 경우는 유저를 로딩할때 종종 같이 쓰일거 같아서 FetchType.EAGER로 줬음
     private String profileImage;
 
     /** 이메일체크 랜덤 토큰 생성, 토큰 생성 시간 저장 **/

@@ -28,29 +28,72 @@
     <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery-easing/1.4.1/jquery.easing.min.js"></script>
     <!-- Core theme JS-->
     <script src="js/scripts.js"></script>
+    <!-- jdenticon -->
+    <script src="https://cdn.jsdelivr.net/npm/jdenticon@3.1.0/dist/jdenticon.min.js" async
+            integrity="sha384-VngWWnG9GS4jDgsGEUNaoRQtfBGiIKZTiXwm9KpgAeaRn6Y/1tAFiyXqSzqC8Ga/" crossorigin="anonymous">
+    </script>
 
     <link rel="stylesheet" type="text/css" href="/css/common.css" />
 
     <style>
-        a {
+        .loginOrSignUp a {
             color: white;
+        }
+        .loginOrSignUp a:hover {
+            color: #ff2424;
         }
     </style>
 </head>
 
-<div th:fragment="side-nav">
+<div th:fragment="side-nav (currentMenu)">
+    <script>
+        // const initC = {
+        //     leftNavClickFn : function(menuIdStr) {
+        //         alert('menuIdStr ::: ' + menuIdStr);
+        //         $('#leftForm').attr('action', menuIdStr);
+        //         $('#pageName').val(menuIdStr);
+        //         $('#leftForm').submit();
+        //     }
+        // }
+        //
+        // $(function() {
+        //     // var $pageName = $('#pageName').val();
+        //     alert($('#pageName').val());
+        //     console.log($('#pageName').val());
+        //
+        //     // 하이라이트 기능
+        //     // $('.navbar-nav > li > a').removeClass('active');
+        //     // $('#' + pageName).addClass('active');
+        //
+        //     // 네비게이션 메뉴 클릭 이벤트
+        //     $('.navbar-nav > li > a').click(function() {
+        //
+        //         initC.leftNavClickFn($(this).attr("id"));
+        //     });
+        // });
+    </script>
     <nav class="navbar navbar-expand-lg navbar-dark bg-primary fixed-top" id="sideNav">
+        <form id="leftForm" method="get">
+            <input type="hidden" id="pageName" name="pageName">
+        </form>
+
         <a class="navbar-brand DevKTakLogo" th:href="@{/}" style="font-size: 2.5rem;">DevKTak</a>
 
-        <div sec:authorize="!isAuthenticated()">
+        <div sec:authorize="!isAuthenticated()" class="loginOrSignUp">
             <br />
             <a th:href="@{/login}">로그인</a> / <a th:href="@{/sign-up}">회원가입</a>
             <br /><br />
         </div>
-        <a class="navbar-brand js-scroll-trigger" href="#page-top" sec:authorize="isAuthenticated()">
+        <a class="navbar-brand js-scroll-trigger" href="#" th:href="@{/profile-setting}" sec:authorize="isAuthenticated()">
+
+            <!-- 프로필 이미지 -->
             <span class="d-none d-lg-block">
-                <img class="img-fluid img-profile rounded-circle mx-auto mb-2" src="/images/assets/img/profile.jpg" alt="프로필 이미지" />
+                <svg th:if="${#strings.isEmpty(member?.profileImage)}" data-jdenticon-value="user1124" th:data-jdenticon-value="${#authentication.name}"
+                     class="img-fluid img-profile rounded-circle mx-auto mb-2 bg-light" width="160" height="160"></svg>
+                <img th:if="${!#strings.isEmpty(member?.profileImage)}" class="img-fluid img-profile rounded-circle mx-auto mb-2"
+                     th:src="${member.profileImage}" width="160" height="160" alt="프로필 이미지" />
             </span>
+
             <form class="form-inline my-2 my-lg-0" action="#" th:action="@{/logout}" method="post">
                 <button type="submit">로그아웃</button>
             </form>
@@ -61,12 +104,12 @@
         </button>
         <div class="collapse navbar-collapse" id="navbarSupportedContent">
             <ul class="navbar-nav">
-                <li class="nav-item"><a class="nav-link js-scroll-trigger" href="#about">박경탁?</a></li>
-                <li class="nav-item"><a class="nav-link js-scroll-trigger" href="#experience">Experience</a></li>
-                <li class="nav-item"><a class="nav-link js-scroll-trigger" href="#education">Education</a></li>
-                <li class="nav-item"><a class="nav-link js-scroll-trigger" href="#skills">Skills</a></li>
-                <li class="nav-item"><a class="nav-link js-scroll-trigger" href="#interests">Bodylog</a></li>
-                <li class="nav-item"><a class="nav-link js-scroll-trigger" href="#awards">Awards</a></li>
+                <li class="nav-item"><a class="nav-link js-scroll-trigger" href="#" th:href="@{/kyungtak}" th:classappend="${currentMenu == 'kyungtak'} ? active">박경탁?</a></li>
+                <li class="nav-item"><a class="nav-link js-scroll-trigger" href="#" th:href="@{/experience}" th:classappend="${currentMenu == 'experience'} ? active">Experience</a></li>
+                <li class="nav-item"><a class="nav-link js-scroll-trigger" href="#" th:href="@{/education}" th:classappend="${currentMenu == 'education'} ? active">Education</a></li>
+                <li class="nav-item"><a class="nav-link js-scroll-trigger" href="#" th:href="@{/skills}" th:classappend="${currentMenu == 'skills'} ? active">Skills</a></li>
+                <li class="nav-item"><a class="nav-link js-scroll-trigger" href="#" th:href="@{/interests}" th:classappend="${currentMenu == 'interests'} ? active">Bodylog</a></li>
+                <li class="nav-item"><a class="nav-link js-scroll-trigger" href="#" th:href="@{/awards}" th:classappend="${currentMenu == 'awards'} ? active">Awards</a></li>
             </ul>
         </div>
     </nav>

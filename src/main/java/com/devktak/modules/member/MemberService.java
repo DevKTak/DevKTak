@@ -3,6 +3,7 @@ package com.devktak.modules.member;
 import com.devktak.infra.config.AppProperties;
 import com.devktak.infra.mail.EmailService;
 import com.devktak.infra.mail.form.EmailMessageForm;
+import com.devktak.modules.member.form.ProfileForm;
 import com.devktak.modules.member.form.SignUpForm;
 import lombok.RequiredArgsConstructor;
 import lombok.extern.slf4j.Slf4j;
@@ -110,4 +111,9 @@ public class MemberService implements UserDetailsService {
         return new MemberAdapter(member);
     }
 
+    /** 프로필 이미지 업데이트 **/
+    public void updateProfile(Member member, ProfileForm profileForm) {
+        modelMapper.map(profileForm, member); // profileForm 데이터를 member에 채우기
+        memberRepository.save(member); // save()는 id값이 있는지 없는지를 보고 있으면 merge를 시킨다
+    }
 }

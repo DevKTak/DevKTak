@@ -1,7 +1,7 @@
 <!DOCTYPE html>
 <html lang="en" xmlns:th="http://www.thymeleaf.org">
 <head th:replace="fragments.html :: head"></head>
-<body class="bg-light">
+<body>
     <nav th:replace="fragments.html :: side-nav"></nav>
 
     <div class="container">
@@ -13,7 +13,7 @@
 
         <div class="py-5 text-center" th:if="${error == null}">
             <p class="lead">DevKTak 가입</p>
-            <h2>스터디올레 서비스를 사용하려면 인증 이메일을 확인하세요.</h2>
+            <h2>DevKTak 서비스를 사용하려면 인증 이메일을 확인하세요.</h2>
             <div>
                 <p class="lead" th:text="${email}">xxxx@email.com</p>
                 <a class="btn btn-outline-info" th:href="@{/resend-confirm-email}">인증 이메일 다시 보내기</a>
