@@ -28,9 +28,9 @@ public class NavMenuController {
         return "navMenu/skills";
     }
 
-    @GetMapping("/interests")
-    public String interests() {
-        return "navMenu/interests";
+    @GetMapping("/bodylog")
+    public String bodylog() {
+        return "navMenu/bodylog";
     }
 
     @GetMapping("/awards")
