@@ -1,0 +1,81 @@
+<!DOCTYPE html>
+<html lang="en" xmlns:th="http://www.thymeleaf.org">
+<head>
+    <head th:replace="fragments.html :: head"></head>
+    <link rel="stylesheet" type="text/css" href="https://cdnjs.cloudflare.com/ajax/libs/baguettebox.js/1.8.1/baguetteBox.min.css" />
+    <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Droid+Sans:400,700">
+    <link rel="stylesheet" type="text/css" href="/css/gallery/thumbnail-gallery.css">
+</head>
+<body>
+    <div th:replace="fragments.html :: side-nav(currentMenu='bodyLog')"></div>
+    <div class="container gallery-container">
+
+        <h1>BodyLog Gallery</h1>
+        <p class="page-description text-center">Body를 기록하다..</p>
+
+        <div class="tz-gallery">
+            <div class="row">
+                <div th:if="${#lists.isEmpty(bodyLogList) }">
+                    <h3 class="text-center">등록된 사진이 없습니다.</h3>
+                </div>
+                <div th:if="${!#lists.isEmpty(bodyLogList)}" th:each="bodyLog : ${bodyLogList}" class="col-sm-6 col-md-4">
+                    <div class="thumbnail">
+                        <a class="lightbox" th:href="@{'/gallery/' + ${bodyLog.saveFileName}}">
+                            <img th:src="@{'/gallery/' + ${bodyLog.saveFileName}}" with="320" height="320" alt="${bodyLog.title}">
+                        </a>
+                        <div class="caption">
+                            <h3 th:text="${bodyLog.title}"></h3>
+                            <p th:text="${bodyLog.contents}"></p>
+                        </div>
+                    </div>
+                </div>
+                <div th:if="${!#lists.isEmpty(bodyLogList)}" class="col-sm-6 col-md-4">
+                    <div class="thumbnail" style="width: 320px; height: 320px; border: 8px solid black">
+                        <a class="btn" data-target="#writeModal" data-toggle="modal">
+                            <svg xmlns="http://www.w3.org/2000/svg" width="160" height="160" fill="currentColor" style="margin: 65px 0 0 65px; color: #ff2424" class="bi bi-plus" viewBox="0 0 16 16">
+                                <path d="M8 4a.5.5 0 0 1 .5.5v3h3a.5.5 0 0 1 0 1h-3v3a.5.5 0 0 1-1 0v-3h-3a.5.5 0 0 1 0-1h3v-3A.5.5 0 0 1 8 4z"/>
+                            </svg>
+                        </a>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- 사진 올리기 버튼 모달 -->
+    <form action="#" th:action="@{/bodyLog}" th:object="${bodyLogForm}" method="post" enctype="multipart/form-data">
+        <div class="modal fade" id="writeModal" tabindex="-1">
+            <div class="modal-dialog modal-lg">
+                <div class="modal-content" style="padding: 20px;">
+                    <div class="modal-header">
+                        <span style="font-size: 1.5rem; font-weight: bold;">사진 업로드</span>
+                        <button class="close" data-dismiss="modal">&times;</button>
+                    </div>
+                    <div class="modal-body">
+                        <div class="form-group">
+                            <label class="control-label" for="title">제목</label>
+                            <input type="text" id="title" th:field="*{title}" class="form-control" placeholder="BodyLog Title" required="required" />
+                        </div>
+                        <div class="form-group">
+                            <label class="control-label" for="contents">내용</label>
+                            <input type="text" id="contents" th:field="*{contents}" class="form-control" placeholder="BodyLog Contents" required="required" />
+                        </div>
+                        <div class="form-group">
+                            <label class="control-label" for="bodyPicture">사진</label>
+                            <input type="file" id="bodyPicture" th:field="*{bodyPicture}" class="form-control" required="required" />
+                        </div>
+                    </div>
+                    <div class="modal-footer">
+                        <input type="submit" class="btn btn-primary" value="업로드" />
+                    </div>
+                </div>
+            </div>
+        </div>
+    </form>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/baguettebox.js/1.8.1/baguetteBox.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.7/umd/popper.min.js" integrity="sha384-UO2eT0CpHqdSJQ6hJty5KVphtPhzWj9WO1clHTMGa3JDZwrnQq4sF86dIHNDz0W1" crossorigin="anonymous"></script>
+    <script>
+        baguetteBox.run('.tz-gallery');
+    </script>
+</body>
+</html>

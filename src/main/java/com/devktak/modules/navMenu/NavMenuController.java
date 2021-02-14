@@ -1,40 +1,82 @@
 package com.devktak.modules.navMenu;
 
+import com.devktak.modules.member.CurrentMember;
+import com.devktak.modules.member.Member;
+import com.devktak.modules.navMenu.form.BodyLogForm;
 import lombok.RequiredArgsConstructor;
+import lombok.extern.slf4j.Slf4j;
+import org.modelmapper.ModelMapper;
+import org.modelmapper.internal.Errors;
 import org.springframework.stereotype.Controller;
+import org.springframework.ui.Model;
 import org.springframework.web.bind.annotation.GetMapping;
+import org.springframework.web.bind.annotation.ModelAttribute;
+import org.springframework.web.bind.annotation.PostMapping;
+import org.springframework.web.servlet.mvc.support.RedirectAttributes;
 
+import javax.validation.Valid;
+import java.util.List;
+
+@Slf4j
 @Controller
 @RequiredArgsConstructor
 public class NavMenuController {
 
+    private final NavMenuService navMenuService;
+    private final ModelMapper modelMapper;
+
     @GetMapping("/kyungtak")
-    public String kyungtakForm() {
+    public String kyungtakForm(@CurrentMember Member member, Model model) {
+        model.addAttribute(member);
+
         return "navMenu/kyungtak";
     }
 
     @GetMapping("/experience")
-    public String experienceForm() {
+    public String experienceForm(@CurrentMember Member member, Model model) {
+        model.addAttribute(member);
+
         return "navMenu/experience";
     }
 
     @GetMapping("/education")
-    public String education() {
+    public String educationForm(@CurrentMember Member member, Model model) {
+        model.addAttribute(member);
+
         return "navMenu/education";
     }
 
     @GetMapping("/skills")
-    public String skills() {
+    public String skillsForm(@CurrentMember Member member, Model model) {
+        model.addAttribute(member);
+
         return "navMenu/skills";
     }
 
-    @GetMapping("/bodylog")
-    public String bodylog() {
-        return "navMenu/bodylog";
+    @GetMapping("/bodyLog")
+    public String bodyLogForm(@CurrentMember Member member, Model model) {
+        model.addAttribute(member);
+        model.addAttribute(new BodyLogForm());
+        List<BodyLog> bodyLogList = navMenuService.bodyLogList();
+        model.addAttribute("bodyLogList", bodyLogList);
+        return "navMenu/bodyLog";
+    }
+
+    @PostMapping("/bodyLog")
+    public String bodyLogSubmit(@Valid @ModelAttribute BodyLogForm bodyLogForm, Errors errors,
+                                RedirectAttributes attributes) {
+        if (errors.hasErrors()) {
+            return "navMenu/bodyLog";
+        }
+        navMenuService.bodyLogUpload(bodyLogForm);
+        attributes.addFlashAttribute("message", "사진이 업로드 되었습니다.");
+        return "redirect:/bodyLog";
     }
 
     @GetMapping("/awards")
-    public String awards() {
+    public String awardsForm(@CurrentMember Member member, Model model) {
+        model.addAttribute(member);
+
         return "navMenu/awards";
     }
 }

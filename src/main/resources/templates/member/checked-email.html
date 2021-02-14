@@ -2,7 +2,7 @@
 <html lang="en" xmlns:th="http://www.thymeleaf.org">
 <head th:replace="fragments.html :: head"></head>
 <body class="bg-light">
-    <div th:replace="fragments.html :: side-nav"></div>
+    <div th:replace="fragments.html :: side-nav(currentMenu='checked-email')"></div>
 
     <div class="py-5 text-center" th:if="${error}">
         <p class="lead">DevKTak 이메일 확인</p>

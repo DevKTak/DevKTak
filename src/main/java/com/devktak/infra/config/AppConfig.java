@@ -6,9 +6,11 @@ import org.springframework.context.annotation.Bean;
 import org.springframework.context.annotation.Configuration;
 import org.springframework.security.crypto.factory.PasswordEncoderFactories;
 import org.springframework.security.crypto.password.PasswordEncoder;
+import org.springframework.web.servlet.config.annotation.ResourceHandlerRegistry;
+import org.springframework.web.servlet.config.annotation.WebMvcConfigurer;
 
 @Configuration
-public class AppConfig {
+public class AppConfig implements WebMvcConfigurer {
 
     @Bean // BCrypt 인코딩을 위해 빈으로 등록
     public PasswordEncoder passwordEncoder() {
@@ -23,5 +25,12 @@ public class AppConfig {
 //                .setDestinationNameTokenizer(NameTokenizers.UNDERSCORE)
 //                .setSourceNameTokenizer(NameTokenizers.UNDERSCORE);
         return modelMapper;
+    }
+
+    /** 외부 경로 매핑 **/
+    @Override
+    public void addResourceHandlers(ResourceHandlerRegistry registry) {
+        registry.addResourceHandler("/gallery/**")
+                .addResourceLocations("file:///C:/upload/");
     }
 }

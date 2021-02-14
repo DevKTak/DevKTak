@@ -13,6 +13,7 @@
     <link rel="stylesheet" type="text/css" href="/css/bootstrap/bootstrap-reboot.css">
     <link rel="stylesheet" type="text/css" href="/css/bootstrap/bootstrap-utilities.css">
     <link rel="icon" type="image/x-icon" href="/images/assets/img/favicon.ico" />
+    <link rel="stylesheet" href="//cdn.jsdelivr.net/npm/xeicon@2.3.3/xeicon.min.css">
     <!-- Core theme CSS (includes Bootstrap)-->
     <link rel="stylesheet" type="text/css" href="/css/styles.css" />
     <!-- Google fonts-->
@@ -38,8 +39,12 @@
     <style>
         .loginOrSignUp a {
             color: white;
+            text-decoration: none;
         }
         .loginOrSignUp a:hover {
+            color: #ff2424;
+        }
+        .loginOrSignUp a.active {
             color: #ff2424;
         }
     </style>
@@ -51,7 +56,8 @@
 
         <div sec:authorize="!isAuthenticated()" class="loginOrSignUp">
             <br />
-            <a th:href="@{/login}">로그인</a> / <a th:href="@{/sign-up}">회원가입</a>
+            <a th:href="@{/login}" th:classappend="${currentMenu == 'login'} ? active">로그인</a> /
+            <a th:href="@{/sign-up}" th:classappend="${currentMenu == 'sign-up'} ? active">회원가입</a>
             <br /><br />
         </div>
 
@@ -75,11 +81,11 @@
 
         <div class="collapse navbar-collapse" id="navbarSupportedContent">
             <ul class="navbar-nav">
-                <li class="nav-item"><a class="nav-link js-scroll-trigger" id="test" href="#" th:href="@{/kyungtak}" th:classappend="${currentMenu == 'kyungtak'} ? active">박경탁?</a></li>
+                <li class="nav-item"><a class="nav-link js-scroll-trigger" href="#" th:href="@{/kyungtak}" th:classappend="${currentMenu == 'kyungtak'} ? active">박경탁?</a></li>
                 <li class="nav-item"><a class="nav-link js-scroll-trigger" href="#" th:href="@{/experience}" th:classappend="${currentMenu == 'experience'} ? active">Experience</a></li>
                 <li class="nav-item"><a class="nav-link js-scroll-trigger" href="#" th:href="@{/education}" th:classappend="${currentMenu == 'education'} ? active">Education</a></li>
                 <li class="nav-item"><a class="nav-link js-scroll-trigger" href="#" th:href="@{/skills}" th:classappend="${currentMenu == 'skills'} ? active">Skills</a></li>
-                <li class="nav-item"><a class="nav-link js-scroll-trigger" href="#" th:href="@{/bodylog}" th:classappend="${currentMenu == 'bodylog'} ? active">Bodylog</a></li>
+                <li class="nav-item"><a class="nav-link js-scroll-trigger" href="#" th:href="@{/bodyLog}" th:classappend="${currentMenu == 'bodyLog'} ? active">Bodylog</a></li>
                 <li class="nav-item"><a class="nav-link js-scroll-trigger" href="#" th:href="@{/awards}" th:classappend="${currentMenu == 'awards'} ? active">Awards</a></li>
             </ul>
         </div>
