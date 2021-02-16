@@ -1,7 +1,8 @@
 .DevKTakLogo {
-  font-style: italic;
-  font-family: 'tahoma';
-  text-shadow: 0 2px 0 #ff2424,
+    font-size: 2.5rem;
+    font-style: italic;
+    font-family: 'tahoma';
+    text-shadow: 0 2px 0 #ff2424,
                0 2px 0 #c9c9c9,
                0 3px 0 #bbb,
                0 4px 0 #b9b9b9,
@@ -15,10 +16,14 @@
                0 20px 20px rgba(0,0,0,.15);
 }
 html {
-  min-height: 100%;
-  margin: 0;
-  padding: 0;
-  position: relative;
+    min-height: 100%;
+    margin: 0;
+    padding: 0;
+    position: relative;
+}
+a:hover {
+    color: white;
+    text-decoration: none;
 }
 
 /*ul > li {*/

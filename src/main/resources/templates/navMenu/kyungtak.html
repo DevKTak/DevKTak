@@ -3,6 +3,55 @@
 <head th:replace="fragments.html :: head"></head>
 <body>
     <div th:replace="fragments.html :: side-nav(currentMenu='kyungtak')"></div>
-    <h1>Kyungtak</h1>
+
+    <button type="button" class="btn btn-secondary" data-bs-toggle="tooltip" data-bs-placement="top" title="Tooltip on top">
+        Tooltip on top
+    </button>
+
+    <span
+          class="d-inline-block" tabindex="0" data-trigger="focus" data-toggle="tooltip" data-placement="bottom" title="스터디 공개 준비중">
+        <button class="btn btn-primary btn-sm" style="pointer-events: none;" type="button" disabled>DRAFT</button>
+    </span>
+
+    <section class="resume-section" id="about">
+        <div>
+            <h1 class="mb-0">
+                Kyungtak
+                <span class="text-primary">Park</span>
+            </h1>
+            <div class="mb-5 pull-right" style="font-size: 23px; font-family:'Saira Extra Condensed';">
+                <span class="text-primary">기본</span>에 충실하고 <span class="text-primary">개념</span>있는 <span class="text-primary">소통</span>이 원할한 개발자
+            </div>
+            <p class="lead mb-5">
+                이름: 박경탁</br>
+                나이: 만 28세</br>
+                성별: 남</br>
+                지역: 서울</br>
+                병역: 필</br>
+                번호: 010-2693-1124
+            </p>
+            <div class="social-icons">
+                <a class="social-icon" href="#" data-bs-toggle="tooltip" data-placement="bottom" title="tak24">
+                    <i class="xi-kakaotalk xi-2x"></i>
+                </a>
+                <a class="social-icon" th:href="@{https://www.instagram.com/k___t.p24/}" title="k___t.p24">
+                    <i class="xi-instagram xi-2x"></i>
+                </a>
+                <a class="social-icon" th:href="@{https://github.com/DevKTak}" title="DevKTak">
+                    <i class="xi-github xi-2x"></i>
+                </a>
+                <a class="social-icon" th:href="@{mailto:qkrrudxkr77@naver.com}" title="qkrrudxkr77">
+                    <i class="xi-naver-square xi-2x"></i>
+                </a>
+            </div>
+        </div>
+    </section>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/2.6.0/umd/popper.min.js"></script>
+    <script src="js/popper.js"></script>
+    <script th:fragment="tooltip" type="application/javascript">
+        $(function() {
+            $('[data-toggle="tooltip"]').tooltip();
+        });
+    </script>
 </body>
 </html>
