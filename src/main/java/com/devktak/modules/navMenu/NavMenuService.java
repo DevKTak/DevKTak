@@ -90,8 +90,8 @@ public class NavMenuService {
         fos.close();
     }
 
-    /** bodyLog 테이블 조회 **/
-    public List<BodyLog> bodyLogList() {
-        return navMenuRepository.findAll(Sort.by(Sort.Direction.DESC, "id"));
-    }
+//    /** bodyLog 테이블 조회 **/
+//    public List<BodyLog> bodyLogList() {
+//        return navMenuRepository.findAll(Sort.by(Sort.Direction.DESC, "id"));
+//    }
 }

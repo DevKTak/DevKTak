@@ -108,6 +108,12 @@
             <artifactId>p6spy-spring-boot-starter</artifactId>
             <version>1.5.6</version>
         </dependency>
+        <!-- QueryDSL -->
+        <dependency>
+            <groupId>com.querydsl</groupId>
+            <artifactId>querydsl-jpa</artifactId>
+        </dependency>
+
     </dependencies>
 
     <build>
@@ -124,6 +130,32 @@
                     </excludes>
                 </configuration>
             </plugin>
+            <!-- QueryDSL
+                    Q 클래스를 만들어주는 역할을 해주는 plugin -->
+            <plugin>
+                <groupId>com.mysema.maven</groupId>
+                <artifactId>apt-maven-plugin</artifactId>
+                <version>1.1.3</version>
+                <executions>
+                    <execution>
+                        <goals>
+                            <goal>process</goal>
+                        </goals>
+                        <configuration>
+                            <outputDirectory>target/generated-sources/java</outputDirectory>
+                            <processor>com.querydsl.apt.jpa.JPAAnnotationProcessor</processor>
+                        </configuration>
+                    </execution>
+                </executions>
+                <dependencies>
+                    <dependency>
+                        <groupId>com.querydsl</groupId>
+                        <artifactId>querydsl-apt</artifactId>
+                        <version>${querydsl.version}</version>
+                    </dependency>
+                </dependencies>
+            </plugin>
+
         </plugins>
     </build>
 

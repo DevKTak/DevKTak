@@ -10,6 +10,7 @@ import org.springframework.security.config.annotation.web.builders.HttpSecurity;
 import org.springframework.security.config.annotation.web.builders.WebSecurity;
 import org.springframework.security.config.annotation.web.configuration.EnableWebSecurity;
 import org.springframework.security.config.annotation.web.configuration.WebSecurityConfigurerAdapter;
+import org.springframework.security.core.userdetails.UserDetailsService;
 import org.springframework.security.web.authentication.rememberme.JdbcTokenRepositoryImpl;
 import org.springframework.security.web.authentication.rememberme.PersistentTokenRepository;
 
@@ -20,7 +21,8 @@ import javax.sql.DataSource;
 @RequiredArgsConstructor
 public class SecurityConfig extends WebSecurityConfigurerAdapter { // WebSecurity 설정을 좀 더 손쉽게 하기 위한 상속
 
-    private final MemberService memberService;
+//    private final MemberService memberService; // UserDetailsService로 대체
+    private final UserDetailsService userDetailsService;
     private final DataSource dataSource;
 
     @Override
@@ -39,7 +41,7 @@ public class SecurityConfig extends WebSecurityConfigurerAdapter { // WebSecurit
                 .logoutSuccessUrl("/"); // 로그아웃 성공 시 url
 
         http.rememberMe() // 기본 세션 타임아웃 30분 이후에도 로그인 기억하기
-                .userDetailsService(memberService)
+                .userDetailsService(userDetailsService)
                 .tokenRepository(tokenRepository()); // username, 토큰(랜덤, 매번 바뀜), 시리즈(랜덤, 고정) 3가지 조합해서 만든 토큰
     }
 

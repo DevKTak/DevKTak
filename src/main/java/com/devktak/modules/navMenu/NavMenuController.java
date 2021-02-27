@@ -7,11 +7,16 @@ import lombok.RequiredArgsConstructor;
 import lombok.extern.slf4j.Slf4j;
 import org.modelmapper.ModelMapper;
 import org.modelmapper.internal.Errors;
+import org.springframework.data.domain.Page;
+import org.springframework.data.domain.Pageable;
+import org.springframework.data.domain.Sort;
+import org.springframework.data.web.PageableDefault;
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
 import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.ModelAttribute;
 import org.springframework.web.bind.annotation.PostMapping;
+import org.springframework.web.bind.annotation.RequestParam;
 import org.springframework.web.servlet.mvc.support.RedirectAttributes;
 
 import javax.validation.Valid;
@@ -23,7 +28,7 @@ import java.util.List;
 public class NavMenuController {
 
     private final NavMenuService navMenuService;
-    private final ModelMapper modelMapper;
+    private final NavMenuRepository navMenuRepository;
 
     @GetMapping("/kyungtak")
     public String kyungtakForm(@CurrentMember Member member, Model model) {
@@ -54,11 +59,15 @@ public class NavMenuController {
     }
 
     @GetMapping("/bodyLog")
-    public String bodyLogForm(@CurrentMember Member member, Model model) {
-        model.addAttribute(member);
+    public String bodyLogForm(@RequestParam(defaultValue = "") String keyword, Model model,
+                              @PageableDefault(size = 3, sort = "title", direction = Sort.Direction.ASC)
+                                      Pageable pageable) {
+        Page<BodyLog> bodyLogPage = navMenuRepository.findByKeyword(keyword, pageable);
         model.addAttribute(new BodyLogForm());
-        List<BodyLog> bodyLogList = navMenuService.bodyLogList();
-        model.addAttribute("bodyLogList", bodyLogList);
+        model.addAttribute("bodyLogPage", bodyLogPage);
+        model.addAttribute("keyword", keyword);
+        model.addAttribute("sortProperty", "title");
+
         return "navMenu/bodyLog";
     }
 
