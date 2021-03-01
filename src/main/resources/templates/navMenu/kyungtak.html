@@ -4,15 +4,6 @@
 <body>
     <div th:replace="fragments.html :: side-nav(currentMenu='kyungtak')"></div>
 
-    <button type="button" class="btn btn-secondary" data-bs-toggle="tooltip" data-bs-placement="top" title="Tooltip on top">
-        Tooltip on top
-    </button>
-
-    <span
-          class="d-inline-block" tabindex="0" data-trigger="focus" data-toggle="tooltip" data-placement="bottom" title="스터디 공개 준비중">
-        <button class="btn btn-primary btn-sm" style="pointer-events: none;" type="button" disabled>DRAFT</button>
-    </span>
-
     <section class="resume-section" id="about">
         <div>
             <h1 class="mb-0">
@@ -31,7 +22,7 @@
                 번호: 010-2693-1124
             </p>
             <div class="social-icons">
-                <a class="social-icon" href="#" data-bs-toggle="tooltip" data-placement="bottom" title="tak24">
+                <a class="social-icon" href="#" title="tak24">
                     <i class="xi-kakaotalk xi-2x"></i>
                 </a>
                 <a class="social-icon" th:href="@{https://www.instagram.com/k___t.p24/}" title="k___t.p24">
@@ -46,12 +37,5 @@
             </div>
         </div>
     </section>
-    <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/2.6.0/umd/popper.min.js"></script>
-    <script src="js/popper.js"></script>
-    <script th:fragment="tooltip" type="application/javascript">
-        $(function() {
-            $('[data-toggle="tooltip"]').tooltip();
-        });
-    </script>
 </body>
 </html>

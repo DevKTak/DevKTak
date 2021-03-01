@@ -59,11 +59,13 @@ public class NavMenuController {
     }
 
     @GetMapping("/bodyLog")
-    public String bodyLogForm(@RequestParam(defaultValue = "") String keyword, Model model,
-                              @PageableDefault(size = 3, sort = "title", direction = Sort.Direction.ASC)
+    public String bodyLogForm(@CurrentMember Member member,
+                              @RequestParam(defaultValue = "") String keyword, Model model,
+                              @PageableDefault(size = 6, sort = "title", direction = Sort.Direction.ASC)
                                       Pageable pageable) {
         Page<BodyLog> bodyLogPage = navMenuRepository.findByKeyword(keyword, pageable);
         model.addAttribute(new BodyLogForm());
+        model.addAttribute("member", member);
         model.addAttribute("bodyLogPage", bodyLogPage);
         model.addAttribute("keyword", keyword);
         model.addAttribute("sortProperty", "title");
