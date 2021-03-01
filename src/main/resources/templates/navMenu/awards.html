@@ -3,6 +3,28 @@
 <head th:replace="fragments.html :: head"></head>
 <body>
     <div th:replace="fragments.html :: side-nav(currentMenu='awards')"></div>
-    <h1>Kyungtak</h1>
+    <section class="resume-section" id="education">
+        <div class="resume-section-content">
+            <h2 class="mb-5">Education</h2>
+            <table width="100%" class="table text-center">
+                <thead>
+                <tr>
+                    <th>동서울대학교</th>
+                    <th>닉스테크(주)</th>
+                </tr>
+                </thead>
+                <tbody>
+                <tr>
+                    <td><img width="170" height="250" class="rounded mx-auto d-block" src="/images/scan/DSC.jpg" alt=""></td>
+                    <td><img width="170" height="250" class="rounded mx-auto d-block" src="/images/scan/닉스테크.jpg" alt=""></td>
+                </tr>
+                <tr>
+                    <td><i class="fas fa-trophy text-warning"></i> 성적 우수 장학증서</td>
+                    <td><i class="fas fa-trophy text-warning"></i> 닉스테크 Speach 대상</td>
+                </tr>
+                </tbody>
+            </table>
+        </div>
+    </section>
 </body>
 </html>
