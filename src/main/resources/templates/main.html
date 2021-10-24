@@ -13,7 +13,7 @@
 <body id="page-top">
     <div th:replace="fragments.html :: side-nav(currentMenu='kyungtak')"></div>
 
-    <div class="alert alert-warning" role="alert" th:if="${member != null && !member.emailVerified}">
+    <div class="alert alert-warning" role="alert" th:if="${member != null && !member?.emailVerified}">
         DevKTak 가입은 완료하려면 <a href="#" th:href="@{/check-email}" class="alert-link">계정 인증 이메일 확인</a>하세요.
     </div>
 
