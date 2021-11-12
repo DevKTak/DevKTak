@@ -30,6 +30,8 @@
   <img src="https://img.shields.io/badge/MariaDB-003545?style=flat-square&logo=MariaDB&logoColor=white"/>
 </div>
 
+<br />
+
 <div>
   <img src="https://img.shields.io/badge/HTML5-critical?style=flat-square&logo=HTML5&logoColor=white"/>
   <img src="https://img.shields.io/badge/CSS3-blue?style=flat-square&logo=CSS3&logoColor=white"/> 
