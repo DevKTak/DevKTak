@@ -49,19 +49,19 @@ class MainControllerTest {
         memberRepository.deleteAll();
     }
 
-    @DisplayName("이메일로 로그인 성공")
-    @Test
-    void login_with_email() throws Exception {
-        mockMvc.perform(post("/login")
-                .param("username", "test11@test.com")
-                .param("password", "1234")
-                .with(csrf())) // form을 전달할 때 csrf 토큰도 같이 전송
-                .andExpect(status().is3xxRedirection())
-                .andExpect(redirectedUrl("/")) // 로그인에 성공할 경우 "/" 루트
-                .andExpect(authenticated().withUsername("test11")); /* test11 이라는 username으로 인증이 될 것이다
-                                                                      MemberAdapter.java > super() 에서 첫번째 아규먼트인 username으로
-                                                                      userId를 줬기 때문에 userId로 인증한다 */
-    }
+//    @DisplayName("이메일로 로그인 성공")
+//    @Test
+//    void login_with_email() throws Exception {
+//        mockMvc.perform(post("/login")
+//                .param("username", "test11")
+//                .param("password", "1234")
+//                .with(csrf())) // form을 전달할 때 csrf 토큰도 같이 전송
+//                .andExpect(status().is3xxRedirection())
+//                .andExpect(redirectedUrl("/")) // 로그인에 성공할 경우 "/" 루트
+//                .andExpect(authenticated().withUsername("test11")); /* test11 이라는 username으로 인증이 될 것이다
+//                                                                      MemberAdapter.java > super() 에서 첫번째 아규먼트인 username으로
+//                                                                      userId를 줬기 때문에 userId로 인증한다 */
+//    }
 
 
 
