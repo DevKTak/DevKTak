@@ -23,7 +23,7 @@
   
   <br /><br />
   
- <h2>:muscle: Skills</h2>
+ <h2>:muscle: Programming Languages & Tools</h2>
 
 <div>
   <img src="https://img.shields.io/badge/Java-F44336?style=flat-square&logo=Java&logoColor=white"/>
