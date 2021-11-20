@@ -180,7 +180,7 @@
             <br /><br />
         </div>
 
-        <a class="navbar-brand js-scroll-trigger" href="#" th:href="@{/profile-setting}" sec:authorize="isAuthenticated()">
+        <a class="navbar-brand js-scroll-trigger" href="#" th:href="@{/profile-setting}" sec:authorize="isAuthenticated()" style="flex-direction: column;">
             <!-- 프로필 이미지 -->
             <span class="d-none d-lg-block">
                 <svg th:if="${#strings.isEmpty(member?.profileImage)}" data-jdenticon-value="user1124" th:data-jdenticon-value="${#authentication.name}"
@@ -189,8 +189,8 @@
                      th:src="${member.profileImage}" width="160" height="160" alt="프로필 이미지" />
             </span>
 
-            <form class="form-inline my-2 my-lg-0" action="#" th:action="@{/logout}" method="post">
-                <button type="submit">로그아웃</button>
+            <form class="form-inline my-2 my-lg-0" action="#" th:action="@{/logout}" method="post" style="justify-content: center;">
+                <button type="submit" class="btn btn-outline-primary btn-block" style="width: 70%;"><i class="bi bi-door-closed"></i>&nbsp;&nbsp;Logout</button>
             </form>
         </a>
 
@@ -204,8 +204,8 @@
                 <li class="nav-item"><a class="nav-link js-scroll-trigger" href="#" th:href="@{/experience}" th:classappend="${currentMenu == 'experience'} ? active">Experience</a></li>
                 <li class="nav-item"><a class="nav-link js-scroll-trigger" href="#" th:href="@{/education}" th:classappend="${currentMenu == 'education'} ? active">Education</a></li>
                 <li class="nav-item"><a class="nav-link js-scroll-trigger" href="#" th:href="@{/skills}" th:classappend="${currentMenu == 'skills'} ? active">Skills</a></li>
-                <li class="nav-item"><a class="nav-link js-scroll-trigger" href="#" th:href="@{/bodyLog}" th:classappend="${currentMenu == 'bodyLog'} ? active">Bodylog</a></li>
                 <li class="nav-item"><a class="nav-link js-scroll-trigger" href="#" th:href="@{/awards}" th:classappend="${currentMenu == 'awards'} ? active">Awards</a></li>
+                <li class="nav-item"><a class="nav-link js-scroll-trigger" href="#" th:href="@{/bodyLog}" th:classappend="${currentMenu == 'bodyLog'} ? active">Bodylog</a></li>
             </ul>
         </div>
     </nav>

@@ -29,92 +29,92 @@
 </head>
 <body>
     <div th:replace="fragments.html :: side-nav(currentMenu='bodyLog')"></div>
-    <div class="container gallery-container">
-        <h1>BodyLog Gallery</h1>
+    <section class="resume-section" id="experience">
+        <div class="resume-section-content">
+            <div class="container gallery-container">
+                <h2 style="margin-bottom: 20px;">BodyLog</h2>
+<!--                <p class="page-description">Body도 기록하자</p>-->
+                <div class="row">
+                    <div class="py-2" style="padding-left: 50px;">
+                        <div class="dropdown">
+                            <button class="btn btn-outline-primary dropdown-toggle" type="button" id="dropdownMenuButton" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+                                전체
+                            </button>
+                            <div class="dropdown-menu" aria-labelledby="dropdownMenuButton">
+                                <a class="dropdown-item" th:classappend="${#strings.equals(keyword, 'before')} ? active"
+                                   th:href="@{'/bodyLog?keyword=before'}">
+                                    BEFORE
+                                </a>
+                                <a class="dropdown-item" th:classappend="${#strings.equals(keyword, 'after')} ? active"
+                                   th:href="@{'/bodyLog?keyword=after'}">
+                                    AFTER
+                                </a>
+                            </div>
+                        </div>
 
-        <p class="page-description text-center">Body를 기록하다..</p>
-
-        <div class="row justify-content-center">
-            <div class="py-2 text-center">
-                <div class="dropdown">
-                    <button class="btn btn-outline-primary dropdown-toggle" type="button" id="dropdownMenuButton" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
-                        전체
-                    </button>
-                    <div class="dropdown-menu" aria-labelledby="dropdownMenuButton">
-                        <a class="dropdown-item" th:classappend="${#strings.equals(keyword, 'before')} ? active"
-                           th:href="@{'/bodyLog?keyword=before'}">
-                            BEFORE
-                        </a>
-                        <a class="dropdown-item" th:classappend="${#strings.equals(keyword, 'after')} ? active"
-                           th:href="@{'/bodyLog?keyword=after'}">
-                            AFTER
-                        </a>
+                        <form th:action="@{/bodyLog}" class="form-inline" method="get">
+                            <input class="form-control mr-sm-2" name="keyword" type="search" placeholder="키워드 검색" aria-label="Search" />
+                            <button type="submit" class="btn btn-primary">검색</button>
+                        </form>
                     </div>
                 </div>
 
-                <form th:action="@{/bodyLog}" class="form-inline" method="get">
-                    <input class="form-control mr-sm-2" name="keyword" type="search" placeholder="키워드 검색" aria-label="Search" />
-                    <button type="submit" class="btn btn-primary">검색</button>
-                </form>
-            </div>
-        </div>
-
-        <div class="tz-gallery">
-            <div class="row">
-                <!-- 조건줄때 Pageable에 있는 메서드로 해도 되고 Thymeleaf의 lists 유틸로 해도 됨 -->
-                <div th:if="${bodyLogPage.getTotalElements() == 0}">
-                    <h3 class="text-center">등록된 사진이 없습니다.</h3>
-                </div>
-                <div th:if="${!#lists.isEmpty(bodyLogPage)}" th:each="bodyLog : ${bodyLogPage}" class="col-sm-6 col-md-4">
-                    <div class="thumbnail">
-                        <a class="lightbox" th:href="@{'/gallery/' + ${bodyLog.saveFileName}}">
-                            <img th:src="@{'/gallery/' + ${bodyLog.saveFileName}}" width="200" height="250" alt="${bodyLog.title}">
-                        </a>
-                        <div class="caption context">
-                            <h3 class="context" th:text="${bodyLog.title}"></h3>
-                            <p class="context" th:text="${bodyLog.contents}"></p>
+                <div class="tz-gallery">
+                    <div class="row">
+                        <!-- 조건줄때 Pageable에 있는 메서드로 해도 되고 Thymeleaf의 lists 유틸로 해도 됨 -->
+                        <div th:if="${bodyLogPage.getTotalElements() == 0}">
+                            <h3 class="text-center">등록된 사진이 없습니다.</h3>
+                        </div>
+                        <div th:if="${!#lists.isEmpty(bodyLogPage)}" th:each="bodyLog : ${bodyLogPage}" class="col-sm-6 col-md-4">
+                            <div class="thumbnail">
+                                <a class="lightbox" th:href="@{'/gallery/' + ${bodyLog.saveFileName}}">
+                                    <img th:src="@{'/gallery/' + ${bodyLog.saveFileName}}" width="200" height="250" alt="${bodyLog.title}">
+                                </a>
+                                <div class="caption context">
+                                    <h3 class="context" th:text="${bodyLog.title}"></h3>
+                                    <p class="context" th:text="${bodyLog.contents}"></p>
+                                </div>
+                            </div>
                         </div>
                     </div>
+
+                    <div class="row" style="justify-content: space-between;">
+                        <div style="width: 300px;">
+                            <nav>
+                                <ul class="pagination">
+                                    <li class="page-item" th:classappend="${!bodyLogPage.hasPrevious()}? disabled">
+                                        <a th:href="@{'/bodyLog?keyword=' + ${keyword} + '&sort=' + ${sortProperty} + ',desc&page=' + ${bodyLogPage.getNumber() - 1}}"
+                                           class="page-link" tabindex="-1" aria-disabled="true">
+                                            Previous
+                                        </a>
+                                    </li>
+                                    <li class="page-item" th:classappend="${i == bodyLogPage.getNumber()}? active"
+                                        th:each="i: ${#numbers.sequence(0, bodyLogPage.getTotalPages() - 1)}">
+                                        <a th:href="@{'/bodyLog?keyword=' + ${keyword} + '&sort=' + ${sortProperty} + ',desc&page=' + ${i}}"
+                                           class="page-link" href="#" th:text="${i + 1}">1</a>
+                                    </li>
+                                    <li class="page-item" th:classappend="${!bodyLogPage.hasNext()}? disabled">
+                                        <a th:href="@{'/bodyLog?keyword=' + ${keyword} + '&sort=' + ${sortProperty} + ',desc&page=' + ${bodyLogPage.getNumber() + 1}}"
+                                           class="page-link">
+                                            Next
+                                        </a>
+                                    </li>
+                                </ul>
+                            </nav>
+                        </div>
+
+                        <div style="width: 140px;">
+                            <a class="btn btn-outline-primary" data-target="#writeModal" data-toggle="modal">
+                                <i class="fas fa-cloud-upload-alt" style="font-size: 18px;"></i> 사진등록
+                            </a>
+                        </div>
+                    </div>
+
                 </div>
             </div>
 
-            <div class="row justify-content-center">
-                <div style="width: 300px;">
-                    <nav>
-                        <ul class="pagination justify-content-center">
-                            <li class="page-item" th:classappend="${!bodyLogPage.hasPrevious()}? disabled">
-                                <a th:href="@{'/bodyLog?keyword=' + ${keyword} + '&sort=' + ${sortProperty} + ',desc&page=' + ${bodyLogPage.getNumber() - 1}}"
-                                   class="page-link" tabindex="-1" aria-disabled="true">
-                                    Previous
-                                </a>
-                            </li>
-                            <li class="page-item" th:classappend="${i == bodyLogPage.getNumber()}? active"
-                                th:each="i: ${#numbers.sequence(0, bodyLogPage.getTotalPages() - 1)}">
-                                <a th:href="@{'/bodyLog?keyword=' + ${keyword} + '&sort=' + ${sortProperty} + ',desc&page=' + ${i}}"
-                                   class="page-link" href="#" th:text="${i + 1}">1</a>
-                            </li>
-                            <li class="page-item" th:classappend="${!bodyLogPage.hasNext()}? disabled">
-                                <a th:href="@{'/bodyLog?keyword=' + ${keyword} + '&sort=' + ${sortProperty} + ',desc&page=' + ${bodyLogPage.getNumber() + 1}}"
-                                   class="page-link">
-                                    Next
-                                </a>
-                            </li>
-                        </ul>
-                    </nav>
-                </div>
-
-                <div style="width: 140px;">
-                    <a class="btn btn-outline-primary" data-target="#writeModal" data-toggle="modal">
-                        <i class="fas fa-cloud-upload-alt" style="font-size: 18px;"></i> 사진등록
-                    </a>
-                </div>
-            </div>
-
-        </div>
-    </div>
-
-    <!-- 사진 올리기 버튼 모달 -->
-    <form action="#" th:action="@{/bodyLog}" th:object="${bodyLogForm}" method="post" enctype="multipart/form-data">
+            <!-- 사진 올리기 버튼 모달 -->
+            <form action="#" th:action="@{/bodyLog}" th:object="${bodyLogForm}" method="post" enctype="multipart/form-data">
         <div class="modal fade" id="writeModal" tabindex="-1">
             <div class="modal-dialog modal-lg">
                 <div class="modal-content" style="padding: 20px;">
@@ -143,6 +143,9 @@
             </div>
         </div>
     </form>
+        </div>
+    </section>
+
     <script src="https://cdnjs.cloudflare.com/ajax/libs/baguettebox.js/1.8.1/baguetteBox.min.js"></script>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.7/umd/popper.min.js" integrity="sha384-UO2eT0CpHqdSJQ6hJty5KVphtPhzWj9WO1clHTMGa3JDZwrnQq4sF86dIHNDz0W1" crossorigin="anonymous"></script>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/mark.js/8.11.1/jquery.mark.min.js"></script>

@@ -18,8 +18,8 @@ public class MainController {
         if (member != null) {
             model.addAttribute(member);
         }
-        
-        return "main";
+
+        return "navMenu/kyungtak";
     }
 
     @GetMapping("/login")
