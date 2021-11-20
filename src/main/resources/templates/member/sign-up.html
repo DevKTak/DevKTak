@@ -32,13 +32,14 @@
 </head>
 <body>
     <div th:replace="fragments.html :: side-nav(currentMenu='sign-up')"></div>
+
     <div class="container">
         <div class="py-5 text-center">
             <h2>로고 자리</h2>
             <h3>Create your account</h3>
         </div>
         <div class="row justify-content-center">
-            <form class="needs-validation col-sm-6" autocomplete="on" th:object="${signUpForm}" method="post" th:action="@{/sign-up}" novalidate>
+            <form class="needs-validation col-sm-6" autocomplete="on" th:object="${signUpForm}" method="post" action="/sign-up" th:action="@{/sign-up}" novalidate>
 
                 <div class="form-group">
                     <label for="userId">아이디</label>
@@ -118,6 +119,7 @@
             </form>
         </div>
     </div>
+
     <script th:replace="fragments.html :: form-validation"></script>
 </body>
 </html>

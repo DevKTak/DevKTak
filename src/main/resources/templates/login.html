@@ -4,59 +4,59 @@
 <body>
     <div th:replace="fragments.html :: side-nav(currentMenu='login')"></div>
 
-    <div class="container">
-        <div class="py-5 text-center">
-            <h2>로고 자리</h2>
-            <h3>Sign in to DevKTak</h3>
-        </div>
-        <div class="row justify-content-center">
-            <div th:if="${param.error}" class="alert alert-danger" role="alert">
-                <p>이메일(또는 닉네임)과 패스워드가 정확하지 않습니다.</p>
-                <p>또는 확인되지 않은 이메일을 사용했습니다. 이메일을 확인해 주세요.</p>
-                <p>
-                    확인 후 다시 입력하시거나, <a href="#" th:href="@{/find-passsword}">패스워드 찾기</a>를 이용하세요.
-                </p>
+    <section class="container resume-section" style="align-items: baseline; ">
+        <div class="resume-section-content">
+            <div class="py-5 text-center">
+                <h2>로고 자리</h2>
+                <h3>Sign in to DevKTak</h3>
             </div>
-
-            <!-- Spring Security에서 POST로 들어오는 /login 요청은 처리 해줌 (Mapping 만들필요 X)
-                 대신 데이터베이스에 있는 정보를 참조하여 조회 할 수 있도록 UserDetailsService 인터페이스를 구현해야함 (MemberService.java) -->
-            <form class="needs-validation col-sm-6" th:action="@{/login}" method="post" novalidate>
-
-                <div class="form-group">
-                    <label for="userId">아이디 또는 이메일</label>
-                    <input id="userId" type="text" name="userId" class="form-control"
-                           placeholder="아이디 or Email" aria-describedby="validationUserIdFeedback" required>
-                    <small id="validationUserIdFeedback" class="form-text text-muted">
-                        가입할 때 사용한 아이디 또는 이메일을 입력하세요.
-                    </small>
-                    <small class="invalid-feedback">아이디 또는 이메일을 입력하세요.</small>
+            <div class="row justify-content-center">
+                <div th:if="${param.error}" class="alert alert-danger" role="alert">
+                    <p>이메일(또는 닉네임)과 패스워드가 정확하지 않습니다.</p>
+                    <p>또는 확인되지 않은 이메일을 사용했습니다. 이메일을 확인해 주세요.</p>
+                    <p>
+                        확인 후 다시 입력하시거나, <a href="#" th:href="@{/find-passsword}">패스워드 찾기</a>를 이용하세요.
+                    </p>
                 </div>
 
-                <div class="form-group">
-                    <label for="password">패스워드</label>
-                    <input id="password" type="password" name="password" class="form-control"
-                           aria-describedby="passwordHelp" required>
-                    <small id="passwordHelp" class="form-text text-muted">
-                        패스워드를 입력해주세요.
-                    </small>
-                    <small class="invalid-feedback">패스워드를 입력하세요.</small>
-                </div>
+                <form class="needs-validation col-sm-6" action="/login" th:action="@{/login}" method="post" novalidate>
+                    <div class="form-group">
+                        <label for="userId">아이디 또는 이메일</label>
+                        <input id="userId" type="text" name="userId" class="form-control"
+                               placeholder="아이디 or Email" aria-describedby="validationUserIdFeedback" required>
+                        <small id="validationUserIdFeedback" class="form-text text-muted">
+                            가입할 때 사용한 아이디 또는 이메일을 입력하세요.
+                        </small>
+                        <small class="invalid-feedback">아이디 또는 이메일을 입력하세요.</small>
+                    </div>
 
-                <div class="form-group form-check">
-                    <input type="checkbox" class="form-check-input" id="rememberMe" name="remember-me" checked> <!-- name="remember-me" 디폴트값 -->
-                    <label class="form-check-label" for="rememberMe" aria-describedby="rememberMeHelp">로그인 유지</label>
-                </div>
+                    <div class="form-group">
+                        <label for="password">패스워드</label>
+                        <input id="password" type="password" name="password" class="form-control"
+                               aria-describedby="passwordHelp" required>
+                        <small id="passwordHelp" class="form-text text-muted">
+                            패스워드를 입력해주세요.
+                        </small>
+                        <small class="invalid-feedback">패스워드를 입력하세요.</small>
+                    </div>
 
-                <div class="form-group">
-                    <button class="btn btn-primary btn-block" type="submit"
-                            aria-describedby="submitHelp">로그인</button>
-                    <small id="submitHelp" class="form-text text-muted">
-                        DevKTak에 처음 오신거라면 <a href="#" th:href="@{/sign-up}">계정을 먼저 만드세요.</a>
-                    </small>
-                </div>
-            </form>
+                    <div class="form-group form-check">
+                        <input type="checkbox" class="form-check-input" id="rememberMe" name="remember-me" checked> <!-- name="remember-me" 디폴트값 -->
+                        <label class="form-check-label" for="rememberMe" aria-describedby="rememberMeHelp">로그인 유지</label>
+                    </div>
+
+                    <div class="form-group">
+                        <button class="btn btn-primary btn-block" type="submit"
+                                aria-describedby="submitHelp">로그인</button>
+                        <small id="submitHelp" class="form-text text-muted">
+                            DevKTak에 처음 오신거라면 <a href="#" th:href="@{/sign-up}">계정을 먼저 만드세요.</a>
+                        </small>
+                    </div>
+                </form>
+            </div>
         </div>
-    </div>
+    </section>
+
     <script th:replace="fragments.html :: form-validation"></script>
 </body>
 </html>

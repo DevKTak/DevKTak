@@ -30,7 +30,7 @@ public class NavMenuService {
             // 파일 정보
             String originFileName = bodyLogForm.getBodyPicture().getOriginalFilename();
             String realFileName = originFileName.substring(0, originFileName.lastIndexOf("."));
-            String extension = originFileName.substring(originFileName.lastIndexOf("."), originFileName.length());
+            String extension = originFileName.substring(originFileName.lastIndexOf("."));
             Long size = bodyLogForm.getBodyPicture().getSize();
 
             // 서버에 저장 될 파일 이름

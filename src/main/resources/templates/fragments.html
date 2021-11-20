@@ -117,7 +117,7 @@
             getWeather : function() {
                 const that = this;
 
-                $.getJSON('http://api.openweathermap.org/data/2.5/weather?id=1835848&APPID=9fd979fb7ad8c7ee29c98b432df9d84f&units=metric',
+                $.getJSON('https://api.openweathermap.org/data/2.5/weather?id=1835848&APPID=9fd979fb7ad8c7ee29c98b432df9d84f&units=metric',
                     function (data) {
                         const temp = Math.floor(data.main.temp) + ' ℃';
                         const weatherIcon = (data.weather[0].icon).substr(0,2);
