@@ -1,6 +1,11 @@
 <!DOCTYPE html>
 <html lang="en" xmlns:th="http://www.thymeleaf.org">
 <head th:replace="fragments.html :: head"></head>
+<style>
+    a:hover {
+        color: blue;
+    }
+</style>
 <body>
     <div th:replace="fragments.html :: side-nav(currentMenu='login')"></div>
 
