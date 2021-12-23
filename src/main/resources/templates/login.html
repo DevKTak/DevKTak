@@ -29,7 +29,7 @@
                 <form class="needs-validation col-sm-6" action="/login" th:action="@{/login}" method="post" novalidate>
                     <div class="form-group">
                         <label for="userId">아이디 또는 이메일</label>
-                        <input id="userId" type="text" name="userId" class="form-control"
+                        <input id="userId" type="text" name="userId" class="form-control" value="admin"
                                placeholder="아이디 or Email" aria-describedby="validationUserIdFeedback" required>
                         <small id="validationUserIdFeedback" class="form-text text-muted">
                             가입할 때 사용한 아이디 또는 이메일을 입력하세요.
@@ -39,7 +39,7 @@
 
                     <div class="form-group">
                         <label for="password">패스워드</label>
-                        <input id="password" type="password" name="password" class="form-control"
+                        <input id="password" type="password" name="password" class="form-control" value="1234"
                                aria-describedby="passwordHelp" required>
                         <small id="passwordHelp" class="form-text text-muted">
                             패스워드를 입력해주세요.
