@@ -38,14 +38,14 @@ public class NavMenuService {
 
             String fullPath = SAVE_PATH + File.separator + saveFileName;
 
-            log.debug("originFileName ::: " + originFileName);
-            log.debug("realFileName ::: " + realFileName);
-            log.debug("extension ::: " + extension);
-            log.debug("size ::: " + size);
-            log.debug("saveFileName ::: " + saveFileName);
-            log.debug("fullPath ::: " + fullPath);
-            log.debug("title ::: " + bodyLogForm.getTitle());
-            log.debug("contents ::: " + bodyLogForm.getContents());
+            log.debug("originFileName ::: {}", originFileName);
+            log.debug("realFileName ::: {}", realFileName);
+            log.debug("extension ::: {}", extension);
+            log.debug("size ::: {}", size);
+            log.debug("saveFileName ::: {}", saveFileName);
+            log.debug("fullPath ::: {}", fullPath);
+            log.debug("title ::: {}", bodyLogForm.getTitle());
+            log.debug("contents ::: {}", bodyLogForm.getContents());
 
             writeFile(bodyLogForm.getBodyPicture(), fullPath);
 
