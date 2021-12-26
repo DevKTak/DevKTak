@@ -1995,10 +1995,10 @@ pre code {
 }
 .form-control:focus {
   color: #495057;
-  background-color: #fff;
-  border-color: #e0aa95;
+  background-color: #fff0f0;
+  border: 3px solid #fff70059;
   outline: 0;
-  box-shadow: 0 0 0 0.2rem rgba(189, 93, 56, 0.25);
+  box-shadow: 0 0 0 0.2rem rgba(255, 118, 118, 0.47);
 }
 .form-control::-moz-placeholder {
   color: #6c757d;
