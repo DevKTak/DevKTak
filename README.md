@@ -16,14 +16,14 @@
  
 </div>
   
-  <h2>🏋️‍♂ Web Programmer</h2>
-  :wave: 안녕하세요. <br /><br />
-    
-  선한 영향력을 끼치는 사람이 되고 싶은 **`4` 년차 웹 개발자 박경탁입니다.**
+<h2>💻 Web Programmer</h2>
+:wave: 안녕하세요. <br /><br />
+
+선한 영향력을 끼치는 사람이 되고 싶은 **`4` 년차 웹 개발자 박경탁입니다.**
+
+<br />
   
-  <br /><br />
-  
- <h2>:muscle: Programming Languages & Tools</h2>
+<h2>:muscle: Programming Languages & Tools</h2>
 
 <div>
   <img src="https://img.shields.io/badge/Java-F44336?style=flat-square&logo=Java&logoColor=white"/>
@@ -47,7 +47,22 @@
   <img src="https://img.shields.io/badge/GitLab-FCA121?style=flat-square&logo=GitLab&logoColor=white"/>
 </div>
 
-<br /><br /><br />
+<br /><br />
 
+<!-- 
+[![solved.ac tier](http://mazassumnida.wtf/api/generate_badge?boj=qkrrudxkr77)](https://solved.ac/qkrrudxkr77) -->
+<h2>🏋 DevKTak Site</h2>
+https://devktak.herokuapp.com/
+<br />
 
-[![solved.ac tier](http://mazassumnida.wtf/api/generate_badge?boj=qkrrudxkr77)](https://solved.ac/qkrrudxkr77)
+### Technology Stack
+- SpringBoot 2.4.1
+- JPA
+- MariaDB
+- Maven
+- Thymeleaf
+
+<br />
+
+<h2>🗒 Notion</h2>
+https://west-drip-b53.notion.site/Spring-242791e2748a4a4697a898d07280df79
