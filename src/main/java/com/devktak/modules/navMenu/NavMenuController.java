@@ -19,6 +19,7 @@ import org.springframework.web.bind.annotation.RequestParam;
 import org.springframework.web.servlet.mvc.support.RedirectAttributes;
 
 import javax.validation.Valid;
+import java.io.IOException;
 
 @Slf4j
 @Controller
@@ -73,11 +74,11 @@ public class NavMenuController {
 
     @PostMapping("/bodyLog")
     public String bodyLogSubmit(@Valid @ModelAttribute BodyLogForm bodyLogForm, Errors errors,
-                                RedirectAttributes attributes) {
+                                RedirectAttributes attributes) throws IOException {
         if (errors.hasErrors()) {
             return "navMenu/bodyLog";
         }
-        navMenuService.bodyLogUpload(bodyLogForm);
+        navMenuService.uploadBodyLogs(bodyLogForm);
         attributes.addFlashAttribute("message", "사진이 업로드 되었습니다.");
         return "redirect:/bodyLog";
     }

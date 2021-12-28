@@ -18,7 +18,7 @@ public class AppConfig implements WebMvcConfigurer {
     @Value("${resource.path}")
     private String resourcePath;
 
-    @Value("${upload.path")
+    @Value("${upload.path}")
     private String uploadPath;
 
   @Bean // BCrypt 인코딩을 위해 빈으로 등록

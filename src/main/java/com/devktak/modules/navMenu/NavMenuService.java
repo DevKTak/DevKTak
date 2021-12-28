@@ -3,13 +3,11 @@ package com.devktak.modules.navMenu;
 import com.devktak.modules.navMenu.form.BodyLogForm;
 import lombok.RequiredArgsConstructor;
 import lombok.extern.slf4j.Slf4j;
-import org.springframework.data.domain.Sort;
 import org.springframework.stereotype.Service;
 import org.springframework.transaction.annotation.Transactional;
 import org.springframework.web.multipart.MultipartFile;
 
 import java.io.File;
-import java.io.FileOutputStream;
 import java.io.IOException;
 import java.util.Calendar;
 import java.util.List;
@@ -20,18 +18,29 @@ import java.util.List;
 @Slf4j
 public class NavMenuService {
 
-    private static final String SAVE_PATH = "C:\\upload";
+//    private static final String SAVE_PATH = "C:\\upload";
+    private static final String SAVE_PATH = "/Users/kyungtak/Desktop/Dev/upload";
 
     private final NavMenuRepository navMenuRepository;
 
     /** BODYLOG 페이지 사진 업로드 **/
-    public void bodyLogUpload(BodyLogForm bodyLogForm) {
-        try {
+    public void uploadBodyLogs(BodyLogForm bodyLogForm) throws IOException {
+        List<MultipartFile> bodyPictures = bodyLogForm.getBodyPictures();
+
+        for (MultipartFile bodyPicture : bodyPictures) {
+            if (!bodyPicture.isEmpty()) {
+                uploadBodyLog(bodyPicture, bodyLogForm.getTitle(), bodyLogForm.getContents());
+            }
+        }
+    }
+
+    private void uploadBodyLog(MultipartFile bodyPicture, String title, String contents) throws IOException {
+        if (!bodyPicture.isEmpty()) {
             // 파일 정보
-            String originFileName = bodyLogForm.getBodyPicture().getOriginalFilename();
+            String originFileName = bodyPicture.getOriginalFilename();
             String realFileName = originFileName.substring(0, originFileName.lastIndexOf("."));
             String extension = originFileName.substring(originFileName.lastIndexOf("."));
-            Long size = bodyLogForm.getBodyPicture().getSize();
+            Long size = bodyPicture.getSize();
 
             // 서버에 저장 될 파일 이름
             String saveFileName = realFileName + "_" + getNowSumExtension(extension);
@@ -44,14 +53,15 @@ public class NavMenuService {
             log.debug("size ::: {}", size);
             log.debug("saveFileName ::: {}", saveFileName);
             log.debug("fullPath ::: {}", fullPath);
-            log.debug("title ::: {}", bodyLogForm.getTitle());
-            log.debug("contents ::: {}", bodyLogForm.getContents());
+            log.debug("title ::: {}", title);
+            log.debug("contents ::: {}", contents);
 
-            writeFile(bodyLogForm.getBodyPicture(), fullPath);
+//            writeFile(bodyLogForm.getBodyPicture(), fullPath);
+            bodyPicture.transferTo(new File(fullPath));
 
             BodyLog bodyLog = BodyLog.builder()
-                    .title(bodyLogForm.getTitle())
-                    .contents(bodyLogForm.getContents())
+                    .title(title)
+                    .contents(contents)
                     .originFileName(originFileName)
                     .saveFileName(saveFileName)
                     .extension(extension)
@@ -60,8 +70,6 @@ public class NavMenuService {
                     .build();
 
             navMenuRepository.save(bodyLog);
-        } catch (IOException e) {
-            e.printStackTrace();
         }
     }
 
@@ -82,13 +90,13 @@ public class NavMenuService {
         return backFileName;
     }
 
-    /** 파일 Write **/
-    private void writeFile(MultipartFile multipartFile, String fullPath) throws IOException {
-        byte[] data = multipartFile.getBytes();
-        FileOutputStream fos = new FileOutputStream(fullPath);
-        fos.write(data);
-        fos.close();
-    }
+//    /** 파일 Write **/
+//    private void writeFile(MultipartFile multipartFile, String fullPath) throws IOException {
+//        byte[] data = multipartFile.getBytes();
+//        FileOutputStream fos = new FileOutputStream(fullPath);
+//        fos.write(data);
+//        fos.close();
+//    }
 
 //    /** bodyLog 테이블 조회 **/
 //    public List<BodyLog> bodyLogList() {

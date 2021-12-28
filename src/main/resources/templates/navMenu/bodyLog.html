@@ -67,8 +67,8 @@
                         </div>
                         <div th:if="${!#lists.isEmpty(bodyLogPage)}" th:each="bodyLog : ${bodyLogPage}" class="col-sm-6 col-md-4">
                             <div class="thumbnail">
-                                <a class="lightbox" th:href="@{'/gallery/' + ${bodyLog.saveFileName}}">
-                                    <img th:src="@{'/gallery/' + ${bodyLog.saveFileName}}" width="200" height="250" alt="${bodyLog.title}">
+                                <a class="lightbox" th:href="@{|/gallery/${bodyLog.saveFileName}|}">
+                                    <img th:src="@{|/gallery/${bodyLog.saveFileName}|}" width="200" height="250" alt="${bodyLog.title}">
                                 </a>
                                 <div class="caption context">
                                     <h3 class="context" th:text="${bodyLog.title}"></h3>
@@ -133,12 +133,12 @@
                                 </div>
                                 <div class="form-group">
                                     <label class="control-label" for="bodyPicture">사진</label>
-                                    <input type="file" id="bodyPicture" th:field="*{bodyPicture}" class="form-control" required="required" />
+                                    <input type="file" id="bodyPicture" multiple="multiple" th:field="*{bodyPictures}" class="form-control" required="required" />
                                 </div>
                             </div>
                             <div class="modal-footer">
-<!--                                <input type="submit" class="btn btn-primary" value="업로드" /> heroku 이미지 업로드 서버 문제로 주석 처리 -->
-                                <input type="button" class="btn btn-primary" value="업로드" onclick="herokuUpload();" />
+                                <input type="submit" class="btn btn-primary" value="업로드" />
+<!--                                <input type="button" class="btn btn-primary" value="업로드" onclick="herokuUpload();" />-->
                             </div>
                         </div>
                     </div>
