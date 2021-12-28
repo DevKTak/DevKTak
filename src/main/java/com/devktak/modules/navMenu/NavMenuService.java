@@ -3,6 +3,7 @@ package com.devktak.modules.navMenu;
 import com.devktak.modules.navMenu.form.BodyLogForm;
 import lombok.RequiredArgsConstructor;
 import lombok.extern.slf4j.Slf4j;
+import org.springframework.beans.factory.annotation.Value;
 import org.springframework.stereotype.Service;
 import org.springframework.transaction.annotation.Transactional;
 import org.springframework.web.multipart.MultipartFile;
@@ -18,8 +19,10 @@ import java.util.List;
 @Slf4j
 public class NavMenuService {
 
-//    private static final String SAVE_PATH = "C:\\upload";
-    private static final String SAVE_PATH = "/Users/kyungtak/Desktop/Dev/upload";
+//    private static final String savePath = "C:\\upload";
+
+    @Value("${save.path}")
+    private String savePath;
 
     private final NavMenuRepository navMenuRepository;
 
@@ -45,7 +48,8 @@ public class NavMenuService {
             // 서버에 저장 될 파일 이름
             String saveFileName = realFileName + "_" + getNowSumExtension(extension);
 
-            String fullPath = SAVE_PATH + File.separator + saveFileName;
+            // 전체 경로
+            String fullPath = savePath + saveFileName;
 
             log.debug("originFileName ::: {}", originFileName);
             log.debug("realFileName ::: {}", realFileName);
@@ -56,9 +60,11 @@ public class NavMenuService {
             log.debug("title ::: {}", title);
             log.debug("contents ::: {}", contents);
 
+            // 서버에 저장
 //            writeFile(bodyLogForm.getBodyPicture(), fullPath);
             bodyPicture.transferTo(new File(fullPath));
 
+            // DB에 저장
             BodyLog bodyLog = BodyLog.builder()
                     .title(title)
                     .contents(contents)

@@ -2,7 +2,7 @@
 <html lang="en" xmlns:th="http://www.thymeleaf.org">
 <head>
     <head th:replace="fragments.html :: head"></head>
-    <link rel="stylesheet" type="text/css" href="https://cdnjs.cloudflare.com/ajax/libs/baguettebox.js/1.8.1/baguetteBox.min.css" />
+    <link rel="stylesheet" type="text/css" href="https://cdnjs.cloudflare.com/ajax/libs/baguettebox.js/1.11.1/baguetteBox.css" />
     <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Droid+Sans:400,700">
     <link rel="stylesheet" type="text/css" href="/css/gallery/thumbnail-gallery.css">
     <style>
@@ -29,11 +29,11 @@
 </head>
 <body>
     <div th:replace="fragments.html :: side-nav(currentMenu='bodyLog')"></div>
+
     <section class="resume-section" id="experience">
         <div class="resume-section-content">
             <div class="container gallery-container">
                 <h2 style="margin-bottom: 20px;">BodyLog</h2>
-<!--                <p class="page-description">Body도 기록하자</p>-->
                 <div class="row">
                     <div class="py-2" style="padding-left: 50px;">
                         <div class="dropdown">
@@ -138,7 +138,6 @@
                             </div>
                             <div class="modal-footer">
                                 <input type="submit" class="btn btn-primary" value="업로드" />
-<!--                                <input type="button" class="btn btn-primary" value="업로드" onclick="herokuUpload();" />-->
                             </div>
                         </div>
                     </div>
@@ -147,7 +146,8 @@
         </div>
     </section>
 
-    <script src="https://cdnjs.cloudflare.com/ajax/libs/baguettebox.js/1.8.1/baguetteBox.min.js"></script>
+    <!--<script src="https://cdnjs.cloudflare.com/ajax/libs/baguettebox.js/1.8.1/baguetteBox.min.js"></script>-->
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/baguettebox.js/1.11.1/baguetteBox.min.js"></script>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.7/umd/popper.min.js" integrity="sha384-UO2eT0CpHqdSJQ6hJty5KVphtPhzWj9WO1clHTMGa3JDZwrnQq4sF86dIHNDz0W1" crossorigin="anonymous"></script>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/mark.js/8.11.1/jquery.mark.min.js"></script>
     <script>
@@ -177,10 +177,7 @@
 
             $("input[name='keyword']").on("input", mark);
         });
-
-        function herokuUpload() {
-            w2alert('Upload prohibited on Heroku server', 'Bodylog');
-        }
     </script>
 </body>
 </html>
+
