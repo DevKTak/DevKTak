@@ -22,7 +22,7 @@ class MemberControllerTest {
     @Autowired private MockMvc mockMvc;
     @Autowired private MemberRepository memberRepository;
 
-    @DisplayName("회원 가입 화면 보이는지 테스트")
+ /*   @DisplayName("회원 가입 화면 보이는지 테스트")
     @Test
     void signUpForm() throws Exception {
         mockMvc.perform(get("/sign-up"))
@@ -31,7 +31,7 @@ class MemberControllerTest {
                 .andExpect(view().name("member/sign-up")) // 뷰가 있는지
                 .andExpect(model().attributeExists("signUpForm")) // addAttribute 키값으로 "signUpForm"이 있는지
                 .andExpect(unauthenticated());
-    }
+    }*/
 
 //    @DisplayName("회원가입 처리 - 입력값 정상")
 //    @Test

@@ -21,7 +21,7 @@ import static org.springframework.test.web.servlet.result.MockMvcResultMatchers.
 import static org.springframework.test.web.servlet.result.MockMvcResultMatchers.status;
 
 @Slf4j
-/* junit5 를 쓸대는 RunWith 이런거 안써도됨
+/* junit5를 사용할 때에는 RunWith 이런거 안써도됨
    @SpringBootTest에 이미 @ExtendWith이 달려 있기 때문 */
 @SpringBootTest
 @AutoConfigureMockMvc
