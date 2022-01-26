@@ -1,6 +1,6 @@
 FROM adoptopenjdk/openjdk11
 
-MAINTAINER Kyungtak Park <qkrrudkr77@naver.com>
+MAINTAINER Kyungtak Park <qkrrudxkr77@naver.com>
 
 # 컨테이너에 연결 할 포트번호
 EXPOSE 9292
