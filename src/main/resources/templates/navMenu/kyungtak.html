@@ -13,6 +13,10 @@
             <div class="mb-5" style="font-size: 23px; font-family:'Saira Extra Condensed';">
                 <span class="text-primary">기본</span>에 충실하고 <span class="text-primary">개념</span>있는 <span class="text-primary">소통</span>이 원할한 개발자
             </div>
+            <div>
+                <input type="text" id="message" title="발자취" placeholder="발자취를 남겨주세요~">
+                <button id="btnMessage" onclick="sendMessage()">발자취 남기기</button>
+            </div>
             <div class="lead mb-5">
                 이름: 박경탁</br>
                 나이: 만 29세</br>
@@ -38,5 +42,25 @@
             </div>
         </div>
     </section>
+
+    <script>
+        function sendMessage() {
+            $.ajax({
+                type: 'post',
+                dataType: 'text', // 응답
+                contentType: "application/json; charset=utf-8", // 요청
+                data: JSON.stringify({ message: $('#message').val() }),
+                url: '/kafka',
+                success: function(result) {
+                    if (result === 'success') {
+                        w2alert('KAFKA 서버로 내용이 전달 되었습니다!');
+                        $('#message').val('');
+                    } else {
+                        w2alert('처리 중 오류가 발생하였습니다.');
+                    }
+                }
+            })
+        }
+    </script>
 </body>
 </html>
