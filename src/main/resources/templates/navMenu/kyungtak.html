@@ -23,8 +23,9 @@
                 휴대폰: 010-2693-1124
             </div>
             <div style="margin-bottom: 30px;">
-                <input type="text" id="message" class="form-control" title="발자취" placeholder="여기에 발자취를 남겨주세요~" style="width: 350px; float: left;">
-                <button id="btnMessage" class="btn btn-primary btn-block" onclick="sendMessage()" style="width: 130px;">발자취 남기기</button>
+                <input type="text" id="message" class="form-control" title="발자취" placeholder="여기에 발자취를 남겨주세요~"
+                       style="width: 350px; float: left;" onkeypress="if (window.event.keyCode === 13) sendMessage();">
+                <button id="btnMessage" class="btn btn-primary btn-block" onclick="sendMessage();" style="width: 130px;">발자취 남기기</button>
             </div>
             <div class="social-icons">
                 <a class="social-icon" href="#" title="tak24">
@@ -33,11 +34,14 @@
                 <a class="social-icon" th:href="@{https://www.instagram.com/k___t.p24/}" title="k___t.p24">
                     <i class="xi-instagram xi-2x"></i>
                 </a>
+                <a class="social-icon" th:href="@{mailto:qkrrudxkr77@naver.com}" title="qkrrudxkr77">
+                    <i class="xi-naver-square xi-2x"></i>
+                </a>
                 <a class="social-icon" th:href="@{https://github.com/DevKTak}" title="DevKTak">
                     <i class="xi-github xi-2x"></i>
                 </a>
-                <a class="social-icon" th:href="@{mailto:qkrrudxkr77@naver.com}" title="qkrrudxkr77">
-                    <i class="xi-naver-square xi-2x"></i>
+                <a class="social-icon" th:href="@{https://github.com/DevKTak}" title="Notion">
+                    <i class="xi-book xi-2x"></i>
                 </a>
             </div>
         </div>
