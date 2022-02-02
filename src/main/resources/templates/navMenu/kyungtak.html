@@ -62,13 +62,17 @@
                 contentType: "application/json; charset=utf-8", // 요청
                 data: JSON.stringify({ message: $message.val() }),
                 url: '/kafka',
-                success: function(result) {
+                success: function (result) {
                     if (result === 'success') {
                         w2alert('KAFKA 서버로 내용이 전달 되었습니다!', 'ㄱㅏㅁㅅㅏㅎㅏㅂㄴㅣㄷㅏ');
                         $message.val('');
                     } else {
                         w2alert('처리 중 오류가 발생하였습니다.');
                     }
+                },
+                error: function (e) {
+                    console.error(e.name);
+                    console.error(e);
                 }
             })
         }
