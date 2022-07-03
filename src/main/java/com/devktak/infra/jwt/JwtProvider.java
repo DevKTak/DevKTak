@@ -22,7 +22,7 @@ public class JwtProvider implements InitializingBean {
     private Key key;
 
     public JwtProvider(@Value("${spring.jwt.secret}") String secret,
-                       @Value("${spring.jwt.token-validity-in-seconds") long tokenValidityInSeconds) {
+                       @Value("${spring.jwt.token-validity-in-seconds}") long tokenValidityInSeconds) {
         this.secret = secret;
         this.tokenValidityInSeconds = tokenValidityInSeconds;
     }
