@@ -66,9 +66,9 @@
 [![solved.ac tier](http://mazassumnida.wtf/api/generate_badge?boj=qkrrudxkr77)](https://solved.ac/qkrrudxkr77) -->
 <h2>🏋 DevKTak Site</h2>
 <h3><a href="http://devktak.site" target="_blank" title="DevKTak HomePage">🫵 DevKTak HomePage 👈👈 바로가기</a></h3>
+<br />
 
-
-### Technology Stack
+### ⚙️ Technology Stack
 
 <table border="2" style="width: 100%;">
   <tr>
