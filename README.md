@@ -65,41 +65,43 @@
 <!-- 
 [![solved.ac tier](http://mazassumnida.wtf/api/generate_badge?boj=qkrrudxkr77)](https://solved.ac/qkrrudxkr77) -->
 <h2>🏋 DevKTak Site</h2>
-<h3><a href="devktak.site" target="_blank" title="DevKTak HomePage">🫵 DevKTak HomePage 👈👈 바로가기</a></h3>
+<h3><a href="http://devktak.site" target="_blank" title="DevKTak HomePage">🫵 DevKTak HomePage 👈👈 바로가기</a></h3>
 
 
 ### Technology Stack
 
 <table border="2" style="width: 100%;">
   <tr>
-    <td colspan="3">SpringBoot 2.4.1</td>
+    <td colspan="5">SpringBoot 2.4.1</td>
   </tr>
     <tr>
-    <td colspan="3">Java Open jdk 11</td>
+    <td colspan="5">Java Open jdk 11</td>
   </tr>
     <tr>
-    <td colspan="3">JavaScript</td>
+    <td colspan="5">JavaScript</td>
   </tr>
     <tr>
-    <td colspan="3">JPA</td>
+    <td colspan="5">JPA</td>
   </tr>
   <tr>
-    <td colspan="3">MariaDB</td>
+    <td colspan="5">MariaDB</td>
   </tr>
     <tr>
-    <td colspan="3">Maven</td>
+    <td colspan="5">Maven</td>
   </tr>
     <tr>
-    <td colspan="3">Thymeleaf</td>
+    <td colspan="5">Thymeleaf</td>
   </tr>
     <tr>
-    <td colspan="3">Docker</td>
+    <td colspan="5">Docker</td>
   </tr>
    </tr>
     <tr>
-    <td colspan="3">Apache Kafka</td>
+    <td colspan="5">Apache Kafka</td>
   </tr>
   <tr>
+    <td>Heroku</td>
+    <td> => </td>
     <td>AWS, RDS</td>
     <td> => </td>
     <td>Oracle Cloud</td>
