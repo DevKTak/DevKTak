@@ -84,7 +84,7 @@
     <td colspan="5">JPA</td>
   </tr>
   <tr>
-    <td colspan="5">MariaDB</td>
+    <td colspan="5">MariaDB 10.8.3</td>
   </tr>
     <tr>
     <td colspan="5">Maven</td>
@@ -93,7 +93,7 @@
     <td colspan="5">Thymeleaf</td>
   </tr>
     <tr>
-    <td colspan="5">Docker</td>
+    <td colspan="5">Docker 20.10.17</td>
   </tr>
    </tr>
     <tr>
