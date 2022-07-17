@@ -65,22 +65,48 @@
 <!-- 
 [![solved.ac tier](http://mazassumnida.wtf/api/generate_badge?boj=qkrrudxkr77)](https://solved.ac/qkrrudxkr77) -->
 <h2>🏋 DevKTak Site</h2>
-<h2><a href="devktak.site">🫵 DevKTak HomePage 👈👈 바로가기</a></h2>
-<br />
+<h3><a href="devktak.site" target="_blank" title="DevKTak HomePage">🫵 DevKTak HomePage 👈👈 바로가기</a></h3>
+
 
 ### Technology Stack
-- SpringBoot 2.4.1
-- Java
-- JavaScript
-- JPA
-- MariaDB
-- Maven
-- Thymeleaf
-- Docker
-- Apache Kafka
-- AWS
+
+<table border="2" style="width: 100%;">
+  <tr>
+    <td colspan="3">SpringBoot 2.4.1</td>
+  </tr>
+    <tr>
+    <td colspan="3">Java Open jdk 11</td>
+  </tr>
+    <tr>
+    <td colspan="3">JavaScript</td>
+  </tr>
+    <tr>
+    <td colspan="3">JPA</td>
+  </tr>
+  <tr>
+    <td colspan="3">MariaDB</td>
+  </tr>
+    <tr>
+    <td colspan="3">Maven</td>
+  </tr>
+    <tr>
+    <td colspan="3">Thymeleaf</td>
+  </tr>
+    <tr>
+    <td colspan="3">Docker</td>
+  </tr>
+   </tr>
+    <tr>
+    <td colspan="3">Apache Kafka</td>
+  </tr>
+  <tr>
+    <td>AWS, RDS</td>
+    <td> => </td>
+    <td>Oracle Cloud</td>
+  </tr>
+</table>
 
 <br />
 
 <h2>🗒 Notion</h2>
-https://west-drip-b53.notion.site/Spring-242791e2748a4a4697a898d07280df79
+<h3><a href="https://west-drip-b53.notion.site/Kyungtak-Park-5efbdefdba9e4f3a822598e8a594ae58" target="_blank" title="경탁 노션">🫵 DevKTak Notion 👈👈 바로가기</a></h3>
