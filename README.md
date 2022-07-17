@@ -65,7 +65,7 @@
 <!-- 
 [![solved.ac tier](http://mazassumnida.wtf/api/generate_badge?boj=qkrrudxkr77)](https://solved.ac/qkrrudxkr77) -->
 <h2>🏋 DevKTak Site</h2>
-https://devktak.herokuapp.com/
+<h2><a href="devktak.site">🫵 DevKTak HomePage 👈👈 바로가기</a></h2>
 <br />
 
 ### Technology Stack
