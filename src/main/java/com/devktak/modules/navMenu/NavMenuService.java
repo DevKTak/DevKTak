@@ -79,7 +79,6 @@ public class NavMenuService {
         }
     }
 
-
     /** 현재 시간을 기준으로 파일이름 생성 **/
     private String getNowSumExtension(String extension) {
         String backFileName = "";
