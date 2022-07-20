@@ -27,12 +27,12 @@ public class SecurityConfig extends WebSecurityConfigurerAdapter { // WebSecurit
   @Override
   protected void configure(HttpSecurity http) throws Exception {
     http.authorizeRequests()
-       .mvcMatchers("sign-up", "check-email-token").permitAll() // 권한 확인없이 접근 해야 할 요청들
+       .mvcMatchers("/sign-up", "/check-email-token").permitAll() // 권한 확인없이 접근 해야 할 요청들
        .mvcMatchers(HttpMethod.GET, "/profile/*").permitAll() // 프로필 요청은 GET만 허용
        .anyRequest().authenticated() // 나머지 요청은 로그인 (인증받은 사용자) 해야만 사용 가능
           .and()
             .csrf()
-              .ignoringAntMatchers("/kafka"); // csrf 토큰을 무시해줄 url
+              .ignoringAntMatchers("/kafka", "/login", "/sign-up"); // csrf 토큰을 무시해줄 url
 
     http.formLogin() // Spring Security의 기본 로그인 화면
        .usernameParameter("userId") /* MemberAdapter.java 에서 super() 첫번째 인자로 기본값이 username 인데

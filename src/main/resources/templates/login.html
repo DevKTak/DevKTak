@@ -26,7 +26,7 @@
 
                 <!-- Spring Security에서 POST로 들어오는 /login 요청은 처리 해줌 (Mapping 만들필요 X)
                대신 데이터베이스에 있는 정보를 참조하여 조회 할 수 있도록 UserDetailsService 인터페이스를 구현해야함 (MemberService.java) -->
-                <form class="needs-validation col-sm-6" action="/login" method="post" novalidate>
+                <form class="needs-validation col-sm-6" th:action="@{/login}" action="/login" method="post" novalidate>
                     <div class="form-group">
                         <label for="userId">아이디 또는 이메일</label>
                         <input id="userId" type="text" name="userId" class="form-control" value="admin"
