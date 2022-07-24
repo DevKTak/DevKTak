@@ -93,7 +93,7 @@
     <td colspan="5">Thymeleaf</td>
   </tr>
     <tr>
-    <td colspan="5">Docker 4.0.2</td>
+    <td colspan="5">Docker 20.10.17</td>
   </tr>
    </tr>
     <tr>
