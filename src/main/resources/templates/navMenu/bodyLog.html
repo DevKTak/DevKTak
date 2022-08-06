@@ -37,16 +37,20 @@
                 <div class="row">
                     <div class="py-2" style="padding-left: 50px;">
                         <div class="dropdown">
-                            <button class="btn btn-outline-primary dropdown-toggle" type="button" id="dropdownMenuButton" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
-                                전체
+                            <button class="btn btn-outline-primary dropdown-toggle" type="button" th:text="${keyword}" id="dropdownMenuButton" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+
                             </button>
                             <div class="dropdown-menu" aria-labelledby="dropdownMenuButton">
-                                <a class="dropdown-item" th:classappend="${#strings.equals(keyword, 'before')} ? active"
-                                   th:href="@{'/bodyLog?keyword=before'}">
+                                <a class="dropdown-item" th:classappend="${#strings.equals(keyword, '전체')} ? active"
+                                   th:href="@{'/bodyLog'}">
+                                    전체
+                                </a>
+                                <a class="dropdown-item" th:classappend="${#strings.equals(keyword, 'BEFORE')} ? active"
+                                   th:href="@{'/bodyLog?keyword=BEFORE'}">
                                     BEFORE
                                 </a>
-                                <a class="dropdown-item" th:classappend="${#strings.equals(keyword, 'after')} ? active"
-                                   th:href="@{'/bodyLog?keyword=after'}">
+                                <a class="dropdown-item" th:classappend="${#strings.equals(keyword, 'AFTER')} ? active"
+                                   th:href="@{'/bodyLog?keyword=AFTER'}">
                                     AFTER
                                 </a>
                             </div>
@@ -154,6 +158,7 @@
         baguetteBox.run('.tz-gallery');
 
         $(function() {
+
             var mark = function() {
                 // Read the keyword
                 var keyword = $("input[name='keyword']").val();
@@ -174,8 +179,12 @@
                     }
                 });
             };
-
             $("input[name='keyword']").on("input", mark);
+
+            // $('.dropdown-item').click(function () {
+            //     $('#dropdownMenuButton').text($(this).text());
+            // });
+            // $('#dropdownMenuButton').val(${keyword});
         });
     </script>
 </body>

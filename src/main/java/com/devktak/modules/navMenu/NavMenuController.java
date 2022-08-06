@@ -66,7 +66,7 @@ public class NavMenuController {
         model.addAttribute(new BodyLogForm());
         model.addAttribute("member", member);
         model.addAttribute("bodyLogPage", bodyLogPage);
-        model.addAttribute("keyword", keyword);
+        model.addAttribute("keyword", keyword.equals("") ? "전체" : keyword);
         model.addAttribute("sortProperty", "title");
 
         return "navMenu/bodyLog";
