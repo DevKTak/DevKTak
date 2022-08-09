@@ -68,35 +68,87 @@
 <h3><a href="http://devktak.site" target="_blank" title="DevKTak HomePage">🫵 DevKTak HomePage 👈👈 바로가기</a></h3>
 <br />
 
-### ⚙️ Technology Stack
+<table border="2" style="width: 100%;">
+  <tr>
+    <th>로그인</th>
+    <th>회원가입</th>
+    <th>메뉴</th>
+    <th>프로필 사진</th>
+  </tr>
+  <tr>
+    <td>
+      <img width="537" alt="스크린샷 2022-08-09 오후 11 42 46" src="https://user-images.githubusercontent.com/68748397/183678609-6d3b5b10-7352-4d08-aece-3182a6ee2ad1.png">
+    </td>
+    <td>
+      <img width="612" alt="스크린샷 2022-08-09 오후 11 40 53" src="https://user-images.githubusercontent.com/68748397/183678503-53bb3305-7576-4b97-b818-df309e10fd02.png">
+    </td>
+    <td>
+       <img width="190" alt="스크린샷 2022-08-08 오후 9 10 00" src="https://user-images.githubusercontent.com/68748397/183678740-70c232ee-d2cc-4992-aee0-6297ea8cf509.png">
+    </td>
+     <td>
+       <img width="456" alt="스크린샷 2022-08-08 오후 9 08 54" src="https://user-images.githubusercontent.com/68748397/183679027-d78d9e2f-08e2-4c94-9978-1e56e427f77c.png">
+    </td>
+  </tr>
+  <tr>
+    <th colspan="4">Apache Kafka 사용<th>
+  </tr>
+  <tr>
+    <td><img width="359" alt="스크린샷 2022-08-08 오후 9 09 49" src="https://user-images.githubusercontent.com/68748397/183679434-04ddca77-f9c1-41f0-830c-4e4af7abca85.png"></td>
+    <td><img width="646" alt="스크린샷 2022-08-08 오후 9 08 09" src="https://user-images.githubusercontent.com/68748397/183679752-519e3024-2e60-43f1-bd92-c17482bc72eb.png">
+</td>
+    <td colspan="2"><img width="383" alt="스크린샷 2022-08-08 오후 9 13 25" src="https://user-images.githubusercontent.com/68748397/183679897-d107cf99-ccaf-480d-ad65-b62f0e4fa6d5.png"></td>
+  </tr>
+  <tr>
+    <th>페이지 1</th>
+    <th>페이지 2</th>
+    <th colspan="2">페이지 3</th>
+  </tr>
+  <tr>
+    <td><img width="1159" alt="스크린샷 2022-08-08 오후 9 05 20" src="https://user-images.githubusercontent.com/68748397/183682374-ac465557-c4a1-4f17-a4bf-960a26e41fc9.png"></td>
+    <td><img width="1150" alt="스크린샷 2022-08-08 오후 9 05 28" src="https://user-images.githubusercontent.com/68748397/183682768-65066007-6354-48cf-bf70-aed7754d63df.png"></td>
+    <td colspan="2"><img width="666" alt="스크린샷 2022-08-08 오후 9 05 37" src="https://user-images.githubusercontent.com/68748397/183683807-1b541947-d056-47b3-b449-212f89f12291.png"></td>
+  </tr>
+  <tr>
+    <th colspan="2">페이지 4</th>
+    <th colspan="2">페이지 5</th>
+  </tr>
+  <tr>
+    <td colspan="2"><img width="1147" alt="스크린샷 2022-08-08 오후 9 05 44" src="https://user-images.githubusercontent.com/68748397/183684564-320ab9a4-168b-4b9f-82f2-772c8ae43101.png"></td>
+    <td colspan="2"><img width="886" alt="스크린샷 2022-08-08 오후 9 06 16" src="https://user-images.githubusercontent.com/68748397/183684601-10e05c57-e60e-4ccb-ac71-5ed8988062db.png"></td>
+  </tr>
+</table>                   
+
+<br />
+
+<h3>⚙️ Technology Stack</h3>
 
 <table border="2" style="width: 100%;">
   <tr>
     <td colspan="5">SpringBoot 2.4.1</td>
   </tr>
-    <tr>
+  <tr>
     <td colspan="5">Java Open jdk 11</td>
   </tr>
-    <tr>
+  <tr>
     <td colspan="5">JavaScript</td>
   </tr>
-    <tr>
+  <tr>
     <td colspan="5">JPA</td>
   </tr>
   <tr>
     <td colspan="5">MariaDB 10.8.3</td>
   </tr>
-    <tr>
+  <tr>
     <td colspan="5">Maven</td>
   </tr>
-    <tr>
+  <tr>
     <td colspan="5">Thymeleaf</td>
   </tr>
-    <tr>
+  <tr>
     <td colspan="5">Docker 20.10.17</td>
   </tr>
-   </tr>
-    <tr>
+  </tr>
+  <tr>
     <td colspan="5">Apache Kafka</td>
   </tr>
   <tr>
