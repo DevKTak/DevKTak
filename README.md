@@ -5,7 +5,7 @@
 <div>
   
 [![Hits](https://hits.seeyoufarm.com/api/count/incr/badge.svg?url=https%3A%2F%2Fgithub.com%DevKTak%2Fhit-counter&count_bg=red&title_bg=grey&icon=&icon_color=%23E7E7E7&title=hits&edge_flat=false)](https://hits.seeyoufarm.com)
-<a href="https://www.instagram.com/k___t.p24/">
+<a href="https://www.instagram.com/k___t.p24/" target="_blank">
   <img src="https://img.shields.io/badge/Instagram-222222?style=flat&logo=Instagram&logoColor=E4405F"/>
 </a>
 <a href="mailto:qkrrudxkr77@naver.com">
