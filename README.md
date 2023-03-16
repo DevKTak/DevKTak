@@ -74,6 +74,8 @@
 
 <!-- 
 [![solved.ac tier](http://mazassumnida.wtf/api/generate_badge?boj=qkrrudxkr77)](https://solved.ac/qkrrudxkr77) -->
+
+<!-- 
 <h2>🏋 DevKTak Site</h2>
 <h3><a href="http://devktak.site" target="_blank" title="DevKTak HomePage">🫵 DevKTak HomePage 👈👈 바로가기</a></h3>
 <br />
@@ -169,8 +171,7 @@
     <td>Oracle Cloud</td>
   </tr>
 </table>
-
-<br />
+-->
 
 <h2>🗒 Notion</h2>
 <h3><a href="https://west-drip-b53.notion.site/Kyungtak-Park-5efbdefdba9e4f3a822598e8a594ae58" target="_blank" title="경탁 노션">🫵 DevKTak Notion 👈👈 바로가기</a></h3>
