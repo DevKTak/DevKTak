@@ -15,7 +15,7 @@
 <!-- <g-emoji class="g-emoji" alias="love_letter" fallback-src="https://github.githubassets.com/images/icons/emoji/unicode/1f48c.png">💌</g-emoji> <a href="mailto:qkrrudxkr77@naver.com">qkrrudxkr77@naver.com</a> -->
  
 </div>
-  
+
 <h2>💻 Web Programmer</h2>
 :wave: 안녕하세요. <br /><br />
 
@@ -58,6 +58,16 @@
   <img src="https://img.shields.io/badge/Apache Kafka-231F20?style=flat-square&logo=ApacheKafka&logoColor=white"/>
   <img src="https://img.shields.io/badge/GitHub-424242?style=flat-square&logo=GitHub&logoColor=white"/>
   <img src="https://img.shields.io/badge/Hibernate-59666C?style=flat-square&logo=Hibernate&logoColor=green"/>
+</div>
+
+<br />
+
+<div style="display: flex, height:180px">
+  
+<!-- ![DevKTak's GitHub stats](https://github-readme-stats.vercel.app/api?username=DevKTak&show_icons=true&theme=radical) -->
+  
+<img align="center" style="height:180px" src="https://github-readme-stats.vercel.app/api?username=DevKTak&show_icons=true&theme=radical&hide_border=false" alt="DevKTak's github stats" />
+<a href="https://github.com/DevKTak"><img align="center" style="height:180px" src="https://github-readme-stats.vercel.app/api/top-langs/?username=DevKTak&layout=compact&theme=radical&hide_border=false" /></a> 
 </div>
 
 <br /><br />
