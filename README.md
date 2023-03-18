@@ -170,7 +170,7 @@
 
 <br />
 
-<h2>Contact</h2>
+<h2🔗 Contact</h2>
 <a href="mailto:qkrrudxkr77@naver.com">
   <img src="https://img.shields.io/badge/Naver-222222?style=flat&logo=Naver&logoColor=64DD17"/>
 </a>  
