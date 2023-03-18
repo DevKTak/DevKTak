@@ -3,17 +3,8 @@
 ![header](https://capsule-render.vercel.app/api?type=soft&color=FF4081&text=👋%20%20Hello%20World,%20I'm%20Kyung%20Tak%20%20&height=200&fontSize=60&fontColor=ffffff&animation=fadeIn)
 
 <div>
-  
-[![Hits](https://hits.seeyoufarm.com/api/count/incr/badge.svg?url=https%3A%2F%2Fgithub.com%DevKTak%2Fhit-counter&count_bg=red&title_bg=grey&icon=&icon_color=%23E7E7E7&title=hits&edge_flat=false)](https://hits.seeyoufarm.com)
-<a href="https://www.instagram.com/k___t.p24/" target="_blank">
-  <img src="https://img.shields.io/badge/Instagram-222222?style=flat&logo=Instagram&logoColor=E4405F"/>
-</a>
-<a href="mailto:qkrrudxkr77@naver.com">
-  <img src="https://img.shields.io/badge/Naver-222222?style=flat&logo=Naver&logoColor=64DD17"/>
-</a>  
-  
-<!-- <g-emoji class="g-emoji" alias="love_letter" fallback-src="https://github.githubassets.com/images/icons/emoji/unicode/1f48c.png">💌</g-emoji> <a href="mailto:qkrrudxkr77@naver.com">qkrrudxkr77@naver.com</a> -->
  
+[![Hits](https://hits.seeyoufarm.com/api/count/incr/badge.svg?url=https%3A%2F%2Fgithub.com%DevKTak%2Fhit-counter&count_bg=red&title_bg=grey&icon=&icon_color=%23E7E7E7&title=hits&edge_flat=false)](https://hits.seeyoufarm.com)
 </div>
 
 <h2>💻 Web Programmer</h2>
@@ -174,5 +165,17 @@
 </table>
 -->
 
-<h2>🗒 Notion</h2>
+<h2>📝 Notion</h2>
 <h3><a href="https://west-drip-b53.notion.site/Kyungtak-Park-5efbdefdba9e4f3a822598e8a594ae58" target="_blank" title="경탁 노션">🫵 DevKTak Notion 👈👈 바로가기</a></h3>
+
+<br />
+
+<h2>Contact</h2>
+<a href="mailto:qkrrudxkr77@naver.com">
+  <img src="https://img.shields.io/badge/Naver-222222?style=flat&logo=Naver&logoColor=64DD17"/>
+</a>  
+<a href="https://www.instagram.com/k___t.p24/" target="_blank">
+  <img src="https://img.shields.io/badge/Instagram-222222?style=flat&logo=Instagram&logoColor=E4405F"/>
+</a>
+  
+<!-- <g-emoji class="g-emoji" alias="love_letter" fallback-src="https://github.githubassets.com/images/icons/emoji/unicode/1f48c.png">💌</g-emoji> <a href="mailto:qkrrudxkr77@naver.com">qkrrudxkr77@naver.com</a> -->
