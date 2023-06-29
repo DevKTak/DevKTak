@@ -1,6 +1,6 @@
 <!-- ![header](https://capsule-render.vercel.app/api?type=slice&color=FF4081&text=%20Park%20Kyung%20Tak%20%20&height=200&fontSize=60&fontColor=ffffff&animation=fadeIn&fontAlign=70&fontAlignY=30&rotate=13) -->
 
-![header](https://capsule-render.vercel.app/api?type=soft&color=F66200&text=👋%20%20Hello%20World,%20I'm%20Kyung%20Tak%20%20&height=200&fontSize=60&fontColor=ffffff&animation=fadeIn)
+![header](https://capsule-render.vercel.app/api?type=soft&color=FF6D0D&text=👋%20%20Hello%20World,%20I'm%20Kyung%20Tak%20%20&height=200&fontSize=60&fontColor=ffffff&animation=fadeIn)
 
 <div>
  
