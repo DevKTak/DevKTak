@@ -165,15 +165,24 @@
 </table>
 -->
 
-<h2>📝 Notion</h2>
-<h3><a href="https://west-drip-b53.notion.site/Kyungtak-Park-5efbdefdba9e4f3a822598e8a594ae58" target="_blank" title="경탁 노션">🫵 DevKTak Notion ⬅️ 바로가기</a></h3>
+<h2>📝 Notion & Blog</h2>
+<h3><a href="https://west-drip-b53.notion.site/Kyungtak-Park-5efbdefdba9e4f3a822598e8a594ae58" target="_blank" title="경탁 노션">➲ DevKTak Notion <= 바로가기</a></h3>
+<h3><a href="https://devktak.tistory.com/" target="_blank" title="경탁 블로그">➲ DevKTak Blog <= 바로가기</a></h3>
 
 <br />
 
 <h2>🔗 Contact</h2>
-<a href="mailto:qkrrudxkr77@naver.com">
- <h3>✉️ ➫ <img src="https://img.shields.io/badge/Naver-222222?style=flat&logo=Naver&logoColor=64DD17"/>
-</a>
+
+<h3>
+ <a href="mailto:qkrrudxkr77@gmail.com">
+  📩 ➲ <img src="https://img.shields.io/badge/Gmail-222222?style=flat&logo=gmail&logoColor=red"/>
+ </a>
+</h3>
+<h3>
+ <a href="mailto:qkrrudxkr77@naver.com">
+  📩 ➲ <img src="https://img.shields.io/badge/Naver-222222?style=flat&logo=Naver&logoColor=64DD17"/>
+ </a>
+</h3>
 
 <!--
 <a href="https://www.instagram.com/k___t.p24/" target="_blank">
