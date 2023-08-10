@@ -194,6 +194,6 @@
 
 <h2>✎ Article</h2>
 
-> - [프로젝트에 Spring Batch 적용해보기](https://github.com/DevKTak/OTL/blob/main/development/SpringBatch.md)   
-> - [Layered Architecture to Hexagonal Architecture 변경해보기](https://github.com/DevKTak/OTL/blob/main/development/LayeredToHexagonal.md)
+> - **[프로젝트에 Spring Batch 적용해보기](https://github.com/DevKTak/OTL/blob/main/development/SpringBatch.md)**   
+> - **[Layered Architecture to Hexagonal Architecture 변경해보기](https://github.com/DevKTak/OTL/blob/main/development/LayeredToHexagonal.md)**
 
