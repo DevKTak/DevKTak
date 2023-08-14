@@ -57,15 +57,19 @@
 <div style="display: flex, height:180px">
   
 <!-- ![DevKTak's GitHub stats](https://github-readme-stats.vercel.app/api?username=DevKTak&show_icons=true&theme=radical) -->
-  
-<img align="center" style="height:180px" src="https://github-readme-stats.vercel.app/api?username=DevKTak&show_icons=true&theme=radical&hide_border=false" alt="DevKTak's github stats" />
+
+[![solved.ac tier](http://mazassumnida.wtf/api/generate_badge?boj=qkrrudxkr77)](https://solved.ac/qkrrudxkr77)
+
+ <img align="center" style="height:180px" src="https://github-readme-stats.vercel.app/api?username=DevKTak&show_icons=true&theme=radical&hide_border=false" alt="DevKTak's github stats" />
+ <!--
 <a href="https://github.com/DevKTak"><img align="center" style="height:180px" src="https://github-readme-stats.vercel.app/api/top-langs/?username=DevKTak&layout=compact&theme=radical&hide_border=false" /></a> 
 </div>
+-->
 
 <br /><br />
 
-<!-- 
-[![solved.ac tier](http://mazassumnida.wtf/api/generate_badge?boj=qkrrudxkr77)](https://solved.ac/qkrrudxkr77) -->
+
+
 
 <!-- 
 <h2>🏋 DevKTak Site</h2>
