@@ -198,6 +198,7 @@
 
 <h2>✎ Article</h2>
 
-> - **[프로젝트에 Spring Batch 적용해보기](https://github.com/DevKTak/OTL/blob/main/development/SpringBatch.md)**   
-> - **[Layered Architecture to Hexagonal Architecture 변경해보기](https://github.com/DevKTak/OTL/blob/main/development/LayeredToHexagonal.md)**
+> ### 🧑🏼‍💻 프로젝트 이슈 해결? 해볼게요 [Link](https://github.com/DevKTak/OTL/tree/main/project_issue)
+> - **[Spring Batch 적용? 해볼게요](https://github.com/DevKTak/OTL/blob/main/project_issue/SpringBatch.md)**   
+> - **[Layered Architecture to Hexagonal Architecture 변경? 해볼게요](https://github.com/DevKTak/OTL/blob/main/project_issue/LayeredToHexagonal.md)**
 
