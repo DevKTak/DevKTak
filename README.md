@@ -60,8 +60,7 @@
 
 [![solved.ac tier](http://mazassumnida.wtf/api/generate_badge?boj=qkrrudxkr77)](https://solved.ac/qkrrudxkr77)
 
-![Anurag's GitHub stats](https://github-readme-stats.vercel.app/api?username=devktak&show_icons=true&theme=transparent)
-
+![Anurag's GitHub stats](https://github-readme-stats.vercel.app/api?username=devktak&show_icons=true&theme=transparent&bg_color=FFEACF)
 
  <!--
 <img align="center" style="height:180px" src="https://github-readme-stats.vercel.app/api?username=devktak&show_icons=true&theme=radical&hide_border=false" alt="DevKTak's github stats" />  
@@ -70,9 +69,6 @@
 -->
 
 <br /><br />
-
-
-
 
 <!-- 
 <h2>🏋 DevKTak Site</h2>
