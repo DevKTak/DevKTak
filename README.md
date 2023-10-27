@@ -181,11 +181,14 @@
   📩 ➲ <img src="https://img.shields.io/badge/Gmail-222222?style=flat&logo=gmail&logoColor=red"/> qkrrudxkr77@gmail.com
  </a>
 </h3>
-<h3>
- <a href="mailto:qkrrudxkr77@naver.com">
-  📩 ➲ <img src="https://img.shields.io/badge/Naver-222222?style=flat&logo=Naver&logoColor=64DD17"/> qkrrudxkr77@naver.com
- </a>
-</h3>
+
+<!--
+ <h3>
+  <a href="mailto:qkrrudxkr77@naver.com">
+   📩 ➲ <img src="https://img.shields.io/badge/Naver-222222?style=flat&logo=Naver&logoColor=64DD17"/> qkrrudxkr77@naver.com
+  </a>
+ </h3>
+ -->
 
 <!--
 <a href="https://www.instagram.com/k___t.p24/" target="_blank">
